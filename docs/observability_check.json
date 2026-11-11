@@ -1,0 +1,293 @@
+{
+ "checks": [
+  {
+   "check": "prometheus target cadvisor is up",
+   "pass": true,
+   "detail": "http://cadvisor:8080/metrics"
+  },
+  {
+   "check": "prometheus target triage-api is up",
+   "pass": true,
+   "detail": "http://api:8000/metrics"
+  },
+  {
+   "check": "all dashboard queries are valid PromQL",
+   "pass": true,
+   "detail": "23 queries"
+  },
+  {
+   "check": "/metrics exposes runs_total",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "/metrics exposes run_seconds_bucket",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "/metrics exposes queue_wait_seconds_bucket",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "/metrics exposes agent_runs_total",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "/metrics exposes agent_seconds_bucket",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "/metrics exposes tool_calls_total",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "/metrics exposes llm_calls_total",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "/metrics exposes http_requests_total",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "/metrics exposes queue_depth",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "/metrics exposes workers_active",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "/metrics exposes llm_breaker_state",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "grafana healthy",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "grafana datasource provisioned",
+   "pass": true,
+   "detail": [
+    "Prometheus"
+   ]
+  },
+  {
+   "check": "grafana dashboard provisioned",
+   "pass": true,
+   "detail": [
+    "Petition Triage - overview"
+   ]
+  },
+  {
+   "check": "jaeger lists the api and worker services",
+   "pass": true,
+   "detail": [
+    "triage-api",
+    "triage-worker",
+    "jaeger-all-in-one"
+   ]
+  },
+  {
+   "check": "a single trace spans api AND worker",
+   "pass": true,
+   "detail": {
+    "spans": 12,
+    "services": [
+     "triage-api",
+     "triage-worker"
+    ],
+    "operations": [
+     "POST /v1/petitions",
+     "agent.research",
+     "agent.triage",
+     "agent.verifier",
+     "llm.call",
+     "tool.search_keyword",
+     "tool.search_semantic",
+     "worker.process_petition"
+    ],
+    "contains_petition_text": false
+   }
+  },
+  {
+   "check": "trace attributes contain no petition text",
+   "pass": true,
+   "detail": ""
+  }
+ ],
+ "dashboard_queries": [
+  {
+   "panel": "Runs finished per minute by status",
+   "valid_promql": true,
+   "series_now": 1,
+   "error": null
+  },
+  {
+   "panel": "End-to-end run latency p50 / p95 (s)",
+   "valid_promql": true,
+   "series_now": 1,
+   "error": null
+  },
+  {
+   "panel": "End-to-end run latency p50 / p95 (s)",
+   "valid_promql": true,
+   "series_now": 1,
+   "error": null
+  },
+  {
+   "panel": "Run error rate (failed / all)",
+   "valid_promql": true,
+   "series_now": 0,
+   "error": null
+  },
+  {
+   "panel": "Escalations by reason (per min)",
+   "valid_promql": true,
+   "series_now": 8,
+   "error": null
+  },
+  {
+   "panel": "Queue wait p95 (s)",
+   "valid_promql": true,
+   "series_now": 1,
+   "error": null
+  },
+  {
+   "panel": "Queue depth / active workers",
+   "valid_promql": true,
+   "series_now": 1,
+   "error": null
+  },
+  {
+   "panel": "Queue depth / active workers",
+   "valid_promql": true,
+   "series_now": 1,
+   "error": null
+  },
+  {
+   "panel": "Agent executions by outcome (per min)",
+   "valid_promql": true,
+   "series_now": 9,
+   "error": null
+  },
+  {
+   "panel": "Agent latency p95 (s)",
+   "valid_promql": true,
+   "series_now": 3,
+   "error": null
+  },
+  {
+   "panel": "Tool calls (per min) and p95 latency",
+   "valid_promql": true,
+   "series_now": 5,
+   "error": null
+  },
+  {
+   "panel": "Tool calls (per min) and p95 latency",
+   "valid_promql": true,
+   "series_now": 1,
+   "error": null
+  },
+  {
+   "panel": "LLM calls by provider/outcome (per min)",
+   "valid_promql": true,
+   "series_now": 5,
+   "error": null
+  },
+  {
+   "panel": "LLM retries, fallbacks, breaker rejections (per min)",
+   "valid_promql": true,
+   "series_now": 4,
+   "error": null
+  },
+  {
+   "panel": "LLM retries, fallbacks, breaker rejections (per min)",
+   "valid_promql": true,
+   "series_now": 0,
+   "error": null
+  },
+  {
+   "panel": "LLM retries, fallbacks, breaker rejections (per min)",
+   "valid_promql": true,
+   "series_now": 1,
+   "error": null
+  },
+  {
+   "panel": "Circuit breaker state (0 closed, 1 half-open, 2 open)",
+   "valid_promql": true,
+   "series_now": 2,
+   "error": null
+  },
+  {
+   "panel": "Cache hit ratio",
+   "valid_promql": true,
+   "series_now": 1,
+   "error": null
+  },
+  {
+   "panel": "HTTP requests per second by status",
+   "valid_promql": true,
+   "series_now": 9,
+   "error": null
+  },
+  {
+   "panel": "HTTP latency p95 by route (s)",
+   "valid_promql": true,
+   "series_now": 18,
+   "error": null
+  },
+  {
+   "panel": "Rate-limited requests (per min)",
+   "valid_promql": true,
+   "series_now": 1,
+   "error": null
+  },
+  {
+   "panel": "Container CPU (cores)",
+   "valid_promql": true,
+   "series_now": 11,
+   "error": null
+  },
+  {
+   "panel": "Container memory (bytes)",
+   "valid_promql": true,
+   "series_now": 11,
+   "error": null
+  }
+ ],
+ "panels_without_data_now": [
+  "LLM retries, fallbacks, breaker rejections (per min)",
+  "Run error rate (failed / all)"
+ ],
+ "example_trace": {
+  "spans": 12,
+  "services": [
+   "triage-api",
+   "triage-worker"
+  ],
+  "operations": [
+   "POST /v1/petitions",
+   "agent.research",
+   "agent.triage",
+   "agent.verifier",
+   "llm.call",
+   "tool.search_keyword",
+   "tool.search_semantic",
+   "worker.process_petition"
+  ],
+  "contains_petition_text": false
+ },
+ "passed": 20,
+ "total": 20
+}

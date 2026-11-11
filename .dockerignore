@@ -1,0 +1,45 @@
+# Git
+.git
+.gitignore
+
+# Environment & Secrets (Never bake into Docker images)
+.env
+*.env
+!.env.example
+
+# Python runtime & caches
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.Python
+.pytest_cache
+.coverage
+htmlcov
+.venv
+venv/
+ENV/
+
+# Data, databases, and uploaded artifacts
+data/
+uploads/
+*.sqlite3*
+*.db*
+.hf_cache/
+hub/
+xet/
+
+# Frontend build artifacts and node dependencies
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+*.tsbuildinfo
+
+# IDE & Editor folders
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+

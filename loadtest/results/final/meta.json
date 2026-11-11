@@ -1,0 +1,8 @@
+{
+ "slo_sha256": "9b7460c8651c26ea2cfc63256bf3a27d94cfff89fcb56b8b529abe7cb4b91811",
+ "started": "20261108T161930",
+ "docker": "29.6.2",
+ "git_rev": null,
+ "cpus": 12,
+ "note": "LLM replaced by loadtest/llm_stub.py; all other components real."
+}

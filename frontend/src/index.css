@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 38 33% 96%; --foreground: 30 5% 15%;
+    --card: 0 0% 100%; --card-foreground: 30 5% 15%;
+    --primary: 23 60% 49%; --primary-foreground: 0 0% 100%;
+    --secondary: 38 20% 92%; --secondary-foreground: 30 5% 15%;
+    --muted: 38 18% 92%; --muted-foreground: 32 6% 44%;
+    --accent: 32 76% 59%; --accent-foreground: 30 5% 15%;
+    --navy: 30 5% 15%; --navy-foreground: 38 33% 96%; --navy-subtle: 30 6% 22%;
+    --brand: 23 60% 49%; --brand-foreground: 0 0% 100%;
+    --charcoal: 30 5% 15%; --charcoal-foreground: 38 33% 96%;
+    --border: 38 16% 87%; --input: 38 16% 84%; --ring: 23 60% 49%;
+    --success: 160 46% 36%; --success-soft: 160 35% 93%;
+    --warning: 37 68% 53%; --warning-soft: 37 60% 93%;
+    --danger: 0 50% 55%; --danger-soft: 0 50% 95%;
+    --info: 23 55% 48%; --info-soft: 32 60% 94%;
+    --shadow: 30 10% 20%;
+  }
+  .dark {
+    --background: 30 8% 11%; --foreground: 38 33% 95%;
+    --card: 30 6% 15%; --card-foreground: 38 33% 95%;
+    --primary: 23 66% 55%; --primary-foreground: 0 0% 100%;
+    --secondary: 30 6% 18%; --secondary-foreground: 38 33% 95%;
+    --muted: 30 6% 18%; --muted-foreground: 34 8% 63%;
+    --accent: 32 76% 59%; --accent-foreground: 30 5% 15%;
+    --navy: 30 8% 11%; --navy-foreground: 38 33% 95%; --navy-subtle: 30 6% 18%;
+    --brand: 23 66% 55%; --brand-foreground: 0 0% 100%;
+    --charcoal: 30 8% 9%; --charcoal-foreground: 38 33% 95%;
+    --border: 30 6% 22%; --input: 30 6% 26%; --ring: 23 66% 55%;
+    --success: 160 44% 48%; --success-soft: 160 30% 16%;
+    --warning: 37 70% 58%; --warning-soft: 37 40% 16%;
+    --danger: 0 55% 62%; --danger-soft: 0 35% 16%;
+    --info: 32 70% 58%; --info-soft: 32 35% 16%;
+    --shadow: 0 0% 0%;
+  }
+  * { @apply border-border; }
+  html { -webkit-text-size-adjust: 100%; }
+  body { @apply bg-background text-foreground font-sans antialiased; font-feature-settings: "cv02", "cv03", "cv04", "cv11"; }
+  :focus-visible { @apply outline-none ring-2 ring-ring ring-offset-2 ring-offset-background; }
+  ::selection { background: hsl(var(--accent) / 0.25); }
+}
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}

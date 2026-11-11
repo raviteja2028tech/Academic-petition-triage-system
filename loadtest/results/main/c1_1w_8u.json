@@ -1,0 +1,139 @@
+{
+ "config": {
+  "name": "c1_1w_8u",
+  "workers": 1,
+  "users": 8,
+  "duration": 45
+ },
+ "started": "2026-10-28T13:55:18+00:00",
+ "locust": {
+  "submit": {
+   "requests": 27,
+   "failures": 0,
+   "p50_ms": 74.0,
+   "p95_ms": 370.0,
+   "p99_ms": 380.0,
+   "avg_ms": 143.71337203699483,
+   "rps": 0.609571339763657
+  },
+  "poll": {
+   "requests": 666,
+   "failures": 0,
+   "p50_ms": 16.0,
+   "p95_ms": 51.0,
+   "p99_ms": 98.0,
+   "avg_ms": 22.07969014413895,
+   "rps": 15.03609304750354
+  },
+  "e2e": {
+   "requests": 19,
+   "failures": 0,
+   "p50_ms": 18000.0,
+   "p95_ms": 18000.0,
+   "p99_ms": 18000.0,
+   "avg_ms": 14472.51360039962,
+   "rps": 0.4289576094633142
+  }
+ },
+ "wall_seconds": 47.7,
+ "locust_exit": 0,
+ "throughput_runs_per_s": 0.422,
+ "queue_wait": {
+  "count": 24.0,
+  "mean_s": 12.568,
+  "p50_upper_bound_s": 30.0,
+  "p95_upper_bound_s": 30.0
+ },
+ "run_time": {
+  "count": 23.0,
+  "mean_s": 2.158
+ },
+ "worker_utilisation": 0.941,
+ "counters": {
+  "cache_hits_total{cache=\"retrieval\"}": 48.0,
+  "escalations_total{reason=\"committee_discretion\"}": 23.0,
+  "llm_calls_total{outcome=\"ok\",provider=\"primary\"}": 119.0,
+  "runs_total{status=\"escalated\"}": 23.0
+ },
+ "resources": {
+  "ml-ops-mini-project-api-1": {
+   "cpu_pct_avg": 28.8,
+   "cpu_pct_max": 62.9,
+   "mem_mb_avg": 60.4,
+   "mem_mb_max": 71.5,
+   "samples": 25
+  },
+  "ml-ops-mini-project-cadvisor-1": {
+   "cpu_pct_avg": 12.6,
+   "cpu_pct_max": 137.5,
+   "mem_mb_avg": 244.6,
+   "mem_mb_max": 251.6,
+   "samples": 25
+  },
+  "ml-ops-mini-project-chroma-1": {
+   "cpu_pct_avg": 1.5,
+   "cpu_pct_max": 7.8,
+   "mem_mb_avg": 24.3,
+   "mem_mb_max": 24.4,
+   "samples": 25
+  },
+  "ml-ops-mini-project-grafana-1": {
+   "cpu_pct_avg": 0.7,
+   "cpu_pct_max": 1.5,
+   "mem_mb_avg": 92.9,
+   "mem_mb_max": 92.9,
+   "samples": 25
+  },
+  "ml-ops-mini-project-jaeger-1": {
+   "cpu_pct_avg": 0.2,
+   "cpu_pct_max": 0.7,
+   "mem_mb_avg": 14.9,
+   "mem_mb_max": 15.8,
+   "samples": 25
+  },
+  "ml-ops-mini-project-llm-stub-1": {
+   "cpu_pct_avg": 6.3,
+   "cpu_pct_max": 39.9,
+   "mem_mb_avg": 34.7,
+   "mem_mb_max": 45.0,
+   "samples": 25
+  },
+  "ml-ops-mini-project-locust-run-653ac2c5bf97": {
+   "cpu_pct_avg": 4.7,
+   "cpu_pct_max": 31.0,
+   "mem_mb_avg": 39.1,
+   "mem_mb_max": 39.4,
+   "samples": 22
+  },
+  "ml-ops-mini-project-prometheus-1": {
+   "cpu_pct_avg": 0.7,
+   "cpu_pct_max": 6.3,
+   "mem_mb_avg": 133.3,
+   "mem_mb_max": 135.1,
+   "samples": 25
+  },
+  "ml-ops-mini-project-redis-1": {
+   "cpu_pct_avg": 3.8,
+   "cpu_pct_max": 11.3,
+   "mem_mb_avg": 5.3,
+   "mem_mb_max": 5.7,
+   "samples": 25
+  },
+  "ml-ops-mini-project-ui-1": {
+   "cpu_pct_avg": 8.1,
+   "cpu_pct_max": 41.7,
+   "mem_mb_avg": 48.9,
+   "mem_mb_max": 49.1,
+   "samples": 25
+  },
+  "ml-ops-mini-project-worker-1": {
+   "cpu_pct_avg": 20.8,
+   "cpu_pct_max": 101.2,
+   "mem_mb_avg": 409.0,
+   "mem_mb_max": 428.7,
+   "samples": 25
+  }
+ },
+ "stub": null,
+ "finished": "2026-10-28T13:57:00+00:00"
+}

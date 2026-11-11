@@ -1,0 +1,53 @@
+Exception in thread Thread-5 (_readerthread):
+Traceback (most recent call last):
+  File "C:\Users\ravit\AppData\Local\Programs\Python\Python314\Lib\threading.py", line 1082, in _bootstrap_inner
+    self._context.run(self.run)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\ravit\AppData\Local\Programs\Python\Python314\Lib\threading.py", line 1024, in run
+    self._target(*self._args, **self._kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ravit\AppData\Local\Programs\Python\Python314\Lib\subprocess.py", line 1614, in _readerthread
+    buffer.append(fh.read())
+                  ~~~~~~~^^
+  File "C:\Users\ravit\AppData\Local\Programs\Python\Python314\Lib\encodings\cp1252.py", line 23, in decode
+    return codecs.charmap_decode(input,self.errors,decoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeDecodeError: 'charmap' codec can't decode byte 0x81 in position 7549: character maps to <undefined>
+
+=== nominal_1w_0.3rps: workers=1 users=2 cache=True ===
+  e2e n=10 fail=0 p50=12000ms p95=12000ms | throughput=0.167/s util=0.333
+
+=== cache_on_1w_4u: workers=1 users=4 cache=True ===
+  e2e n=7 fail=0 p50=20000ms p95=24000ms | throughput=0.156/s util=0.348
+
+=== cache_off_1w_4u: workers=1 users=4 cache=False ===
+  e2e n=5 fail=0 p50=20000ms p95=36000ms | throughput=0.111/s util=0.243
+
+=== faults_errors20_rl10: workers=1 users=4 cache=True ===
+  e2e n=5 fail=0 p50=23000ms p95=34000ms | throughput=0.111/s util=0.359
+
+=== outage_100pct: workers=1 users=2 cache=True ===
+  e2e n=7 fail=0 p50=8300ms p95=9900ms | throughput=0.233/s util=0.081
+
+=== w1_12u: workers=1 users=12 cache=True ===
+  e2e n=5 fail=0 p50=21000ms p95=39000ms | throughput=0.111/s util=0.237
+
+=== w2_12u: workers=2 users=12 cache=True ===
+  e2e n=14 fail=0 p50=21000ms p95=36000ms | throughput=0.311/s util=0.345
+
+=== w3_12u: workers=3 users=12 cache=True ===
+  e2e n=15 fail=0 p50=21000ms p95=36000ms | throughput=0.333/s util=0.239
+
+=== c1_1w_1u: workers=1 users=1 cache=True ===
+  e2e n=8 fail=0 p50=6200ms p95=6200ms | throughput=0.178/s util=0.346
+
+=== c1_1w_2u: workers=1 users=2 cache=True ===
+  e2e n=5 fail=0 p50=18000ms p95=19000ms | throughput=0.111/s util=0.228
+
+=== c1_1w_4u: workers=1 users=4 cache=True ===
+  e2e n=7 fail=0 p50=21000ms p95=25000ms | throughput=0.156/s util=0.358
+
+=== c1_1w_8u: workers=1 users=8 cache=True ===
+  e2e n=7 fail=0 p50=21000ms p95=40000ms | throughput=0.156/s util=0.361
+
+raw results: loadtest/results/final

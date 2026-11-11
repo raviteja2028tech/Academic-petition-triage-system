@@ -1,0 +1,414 @@
+{
+ "summary": {
+  "semantic@k=1": {
+   "n_queries": 6,
+   "A_condonation_found": 3,
+   "B_condonation_found": 3,
+   "A_both_found": 0,
+   "B_both_found": 0
+  },
+  "semantic@k=3": {
+   "n_queries": 6,
+   "A_condonation_found": 5,
+   "B_condonation_found": 5,
+   "A_both_found": 2,
+   "B_both_found": 2
+  },
+  "semantic@k=5": {
+   "n_queries": 6,
+   "A_condonation_found": 5,
+   "B_condonation_found": 5,
+   "A_both_found": 4,
+   "B_both_found": 4
+  },
+  "keyword@k=1": {
+   "n_queries": 6,
+   "A_condonation_found": 1,
+   "B_condonation_found": 1,
+   "A_both_found": 0,
+   "B_both_found": 0
+  },
+  "keyword@k=3": {
+   "n_queries": 6,
+   "A_condonation_found": 2,
+   "B_condonation_found": 2,
+   "A_both_found": 0,
+   "B_both_found": 0
+  },
+  "keyword@k=5": {
+   "n_queries": 6,
+   "A_condonation_found": 2,
+   "B_condonation_found": 2,
+   "A_both_found": 0,
+   "B_both_found": 0
+  }
+ },
+ "rows": [
+  {
+   "strategy": "semantic",
+   "k": 1,
+   "q1": "minimum attendance required in each registered course",
+   "q2": "participation coordinator chairperson activities principal programme",
+   "A_has_base": false,
+   "A_has_condonation": true,
+   "B_has_base": false,
+   "B_has_condonation": true
+  },
+  {
+   "strategy": "semantic",
+   "k": 3,
+   "q1": "minimum attendance required in each registered course",
+   "q2": "participation coordinator chairperson activities principal programme",
+   "A_has_base": true,
+   "A_has_condonation": true,
+   "B_has_base": true,
+   "B_has_condonation": true
+  },
+  {
+   "strategy": "semantic",
+   "k": 5,
+   "q1": "minimum attendance required in each registered course",
+   "q2": "participation coordinator chairperson activities principal programme",
+   "A_has_base": true,
+   "A_has_condonation": true,
+   "B_has_base": true,
+   "B_has_condonation": true
+  },
+  {
+   "strategy": "semantic",
+   "k": 1,
+   "q1": "what attendance is required to be eligible for the semester end examination",
+   "q2": "courses examinations prescribed semesters requirement university",
+   "A_has_base": false,
+   "A_has_condonation": false,
+   "B_has_base": false,
+   "B_has_condonation": false
+  },
+  {
+   "strategy": "semantic",
+   "k": 3,
+   "q1": "what attendance is required to be eligible for the semester end examination",
+   "q2": "courses examinations prescribed semesters requirement university",
+   "A_has_base": false,
+   "A_has_condonation": false,
+   "B_has_base": false,
+   "B_has_condonation": false
+  },
+  {
+   "strategy": "semantic",
+   "k": 5,
+   "q1": "what attendance is required to be eligible for the semester end examination",
+   "q2": "courses examinations prescribed semesters requirement university",
+   "A_has_base": false,
+   "A_has_condonation": false,
+   "B_has_base": false,
+   "B_has_condonation": false
+  },
+  {
+   "strategy": "semantic",
+   "k": 1,
+   "q1": "student has 80 percent attendance in a course",
+   "q2": "registered required minimum cannot fulfil secure",
+   "A_has_base": true,
+   "A_has_condonation": false,
+   "B_has_base": true,
+   "B_has_condonation": false
+  },
+  {
+   "strategy": "semantic",
+   "k": 3,
+   "q1": "student has 80 percent attendance in a course",
+   "q2": "registered required minimum cannot fulfil secure",
+   "A_has_base": true,
+   "A_has_condonation": true,
+   "B_has_base": true,
+   "B_has_condonation": true
+  },
+  {
+   "strategy": "semantic",
+   "k": 5,
+   "q1": "student has 80 percent attendance in a course",
+   "q2": "registered required minimum cannot fulfil secure",
+   "A_has_base": true,
+   "A_has_condonation": true,
+   "B_has_base": true,
+   "B_has_condonation": true
+  },
+  {
+   "strategy": "semantic",
+   "k": 1,
+   "q1": "attendance requirement",
+   "q2": "shortage students college teacher candidates counselled",
+   "A_has_base": false,
+   "A_has_condonation": false,
+   "B_has_base": false,
+   "B_has_condonation": false
+  },
+  {
+   "strategy": "semantic",
+   "k": 3,
+   "q1": "attendance requirement",
+   "q2": "shortage students college teacher candidates counselled",
+   "A_has_base": false,
+   "A_has_condonation": true,
+   "B_has_base": false,
+   "B_has_condonation": true
+  },
+  {
+   "strategy": "semantic",
+   "k": 5,
+   "q1": "attendance requirement",
+   "q2": "shortage students college teacher candidates counselled",
+   "A_has_base": true,
+   "A_has_condonation": true,
+   "B_has_base": true,
+   "B_has_condonation": true
+  },
+  {
+   "strategy": "semantic",
+   "k": 1,
+   "q1": "attendance shortage petition medical reasons",
+   "q2": "participation coordinator course chairperson activities principal",
+   "A_has_base": false,
+   "A_has_condonation": true,
+   "B_has_base": false,
+   "B_has_condonation": true
+  },
+  {
+   "strategy": "semantic",
+   "k": 3,
+   "q1": "attendance shortage petition medical reasons",
+   "q2": "participation coordinator course chairperson activities principal",
+   "A_has_base": false,
+   "A_has_condonation": true,
+   "B_has_base": false,
+   "B_has_condonation": true
+  },
+  {
+   "strategy": "semantic",
+   "k": 5,
+   "q1": "attendance shortage petition medical reasons",
+   "q2": "participation coordinator course chairperson activities principal",
+   "A_has_base": true,
+   "A_has_condonation": true,
+   "B_has_base": true,
+   "B_has_condonation": true
+  },
+  {
+   "strategy": "semantic",
+   "k": 1,
+   "q1": "can I write the exam if my attendance is low",
+   "q2": "participation coordinator course chairperson activities principal",
+   "A_has_base": false,
+   "A_has_condonation": true,
+   "B_has_base": false,
+   "B_has_condonation": true
+  },
+  {
+   "strategy": "semantic",
+   "k": 3,
+   "q1": "can I write the exam if my attendance is low",
+   "q2": "participation coordinator course chairperson activities principal",
+   "A_has_base": false,
+   "A_has_condonation": true,
+   "B_has_base": false,
+   "B_has_condonation": true
+  },
+  {
+   "strategy": "semantic",
+   "k": 5,
+   "q1": "can I write the exam if my attendance is low",
+   "q2": "participation coordinator course chairperson activities principal",
+   "A_has_base": false,
+   "A_has_condonation": true,
+   "B_has_base": false,
+   "B_has_condonation": true
+  },
+  {
+   "strategy": "keyword",
+   "k": 1,
+   "q1": "minimum attendance required in each registered course",
+   "q2": "student cannot fulfil secure",
+   "A_has_base": true,
+   "A_has_condonation": false,
+   "B_has_base": true,
+   "B_has_condonation": false
+  },
+  {
+   "strategy": "keyword",
+   "k": 3,
+   "q1": "minimum attendance required in each registered course",
+   "q2": "student cannot fulfil secure",
+   "A_has_base": true,
+   "A_has_condonation": false,
+   "B_has_base": true,
+   "B_has_condonation": false
+  },
+  {
+   "strategy": "keyword",
+   "k": 5,
+   "q1": "minimum attendance required in each registered course",
+   "q2": "student cannot fulfil secure",
+   "A_has_base": true,
+   "A_has_condonation": false,
+   "B_has_base": true,
+   "B_has_condonation": false
+  },
+  {
+   "strategy": "keyword",
+   "k": 1,
+   "q1": "what attendance is required to be eligible for the semester end examination",
+   "q2": "education learning outcome based particularly professional",
+   "A_has_base": false,
+   "A_has_condonation": false,
+   "B_has_base": false,
+   "B_has_condonation": false
+  },
+  {
+   "strategy": "keyword",
+   "k": 3,
+   "q1": "what attendance is required to be eligible for the semester end examination",
+   "q2": "education learning outcome based particularly professional",
+   "A_has_base": false,
+   "A_has_condonation": false,
+   "B_has_base": false,
+   "B_has_condonation": false
+  },
+  {
+   "strategy": "keyword",
+   "k": 5,
+   "q1": "what attendance is required to be eligible for the semester end examination",
+   "q2": "education learning outcome based particularly professional",
+   "A_has_base": false,
+   "A_has_condonation": false,
+   "B_has_base": false,
+   "B_has_condonation": false
+  },
+  {
+   "strategy": "keyword",
+   "k": 1,
+   "q1": "student has 80 percent attendance in a course",
+   "q2": "registered required minimum cannot fulfil secure",
+   "A_has_base": true,
+   "A_has_condonation": false,
+   "B_has_base": true,
+   "B_has_condonation": false
+  },
+  {
+   "strategy": "keyword",
+   "k": 3,
+   "q1": "student has 80 percent attendance in a course",
+   "q2": "registered required minimum cannot fulfil secure",
+   "A_has_base": true,
+   "A_has_condonation": false,
+   "B_has_base": true,
+   "B_has_condonation": false
+  },
+  {
+   "strategy": "keyword",
+   "k": 5,
+   "q1": "student has 80 percent attendance in a course",
+   "q2": "registered required minimum cannot fulfil secure",
+   "A_has_base": true,
+   "A_has_condonation": false,
+   "B_has_base": true,
+   "B_has_condonation": false
+  },
+  {
+   "strategy": "keyword",
+   "k": 1,
+   "q1": "attendance requirement",
+   "q2": "course satisfying permitted semester students grades",
+   "A_has_base": false,
+   "A_has_condonation": false,
+   "B_has_base": false,
+   "B_has_condonation": false
+  },
+  {
+   "strategy": "keyword",
+   "k": 3,
+   "q1": "attendance requirement",
+   "q2": "course satisfying permitted semester students grades",
+   "A_has_base": false,
+   "A_has_condonation": false,
+   "B_has_base": false,
+   "B_has_condonation": false
+  },
+  {
+   "strategy": "keyword",
+   "k": 5,
+   "q1": "attendance requirement",
+   "q2": "course satisfying permitted semester students grades",
+   "A_has_base": false,
+   "A_has_condonation": false,
+   "B_has_base": false,
+   "B_has_condonation": false
+  },
+  {
+   "strategy": "keyword",
+   "k": 1,
+   "q1": "attendance shortage petition medical reasons",
+   "q2": "participation coordinator course chairperson activities principal",
+   "A_has_base": false,
+   "A_has_condonation": true,
+   "B_has_base": false,
+   "B_has_condonation": true
+  },
+  {
+   "strategy": "keyword",
+   "k": 3,
+   "q1": "attendance shortage petition medical reasons",
+   "q2": "participation coordinator course chairperson activities principal",
+   "A_has_base": false,
+   "A_has_condonation": true,
+   "B_has_base": false,
+   "B_has_condonation": true
+  },
+  {
+   "strategy": "keyword",
+   "k": 5,
+   "q1": "attendance shortage petition medical reasons",
+   "q2": "participation coordinator course chairperson activities principal",
+   "A_has_base": false,
+   "A_has_condonation": true,
+   "B_has_base": false,
+   "B_has_condonation": true
+  },
+  {
+   "strategy": "keyword",
+   "k": 1,
+   "q1": "can I write the exam if my attendance is low",
+   "q2": "committee evaluation moderation university concerned conducted",
+   "A_has_base": false,
+   "A_has_condonation": false,
+   "B_has_base": false,
+   "B_has_condonation": false
+  },
+  {
+   "strategy": "keyword",
+   "k": 3,
+   "q1": "can I write the exam if my attendance is low",
+   "q2": "committee evaluation moderation university concerned conducted",
+   "A_has_base": false,
+   "A_has_condonation": true,
+   "B_has_base": false,
+   "B_has_condonation": true
+  },
+  {
+   "strategy": "keyword",
+   "k": 5,
+   "q1": "can I write the exam if my attendance is low",
+   "q2": "committee evaluation moderation university concerned conducted",
+   "A_has_base": false,
+   "A_has_condonation": true,
+   "B_has_base": false,
+   "B_has_condonation": true
+  }
+ ],
+ "meta": {
+  "generated_at": "2026-10-28T12:51:14+00:00",
+  "git_rev": "5a322cb",
+  "retriever": "st",
+  "embedding": "st|all-MiniLM-L6-v2|dim384|norm|clause-v1"
+ }
+}

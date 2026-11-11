@@ -1,0 +1,225 @@
+# Run:  cp .env.example .env   then   docker compose up --build
+# Scale workers:  docker compose up --scale worker=3     (no container_name / host ports on worker, by design)
+# Re-index:       docker compose run --rm ingest
+x-app-env: &app-env
+  REDIS_URL: ${REDIS_URL:-redis://redis:6379/0}
+  DB_PATH: ${DB_PATH:-/data/triage.sqlite3}
+  CHROMA_HOST: ${CHROMA_HOST:-chroma}
+  CHROMA_PORT: ${CHROMA_PORT:-8000}
+  CHROMA_COLLECTION: ${CHROMA_COLLECTION:-regulations}
+  CORPUS_DIR: ${CORPUS_DIR:-/app/corpus}
+  VERIFIED_PASSAGES_FILE: ${VERIFIED_PASSAGES_FILE:-/app/corpus/verified_passages.json}
+  PLACEHOLDER_DELAY_SECONDS: ${PLACEHOLDER_DELAY_SECONDS:-2}
+  EMBED_MODEL: ${EMBED_MODEL:-}
+  HF_HOME: ${HF_HOME:-/hf_cache}
+  AGENT_MODE: ${AGENT_MODE:-agents}
+  PROMPTS_DIR: ${PROMPTS_DIR:-/app/prompts}
+  LLM_BASE_URL: ${LLM_BASE_URL:-}
+  LLM_API_KEY: ${LLM_API_KEY:-}
+  LLM_MODEL: ${LLM_MODEL:-}
+  LLM_TIMEOUT_SECONDS: ${LLM_TIMEOUT_SECONDS:-30}
+  MAX_RESEARCH_STEPS: ${MAX_RESEARCH_STEPS:-8}
+  MAX_TOOL_CALLS: ${MAX_TOOL_CALLS:-10}
+  MAX_RUN_SECONDS: ${MAX_RUN_SECONDS:-120}
+  MAX_VERIFY_RETRIES: ${MAX_VERIFY_RETRIES:-2}
+  FALLBACK_LLM_BASE_URL: ${FALLBACK_LLM_BASE_URL:-}
+  FALLBACK_LLM_API_KEY: ${FALLBACK_LLM_API_KEY:-}
+  FALLBACK_LLM_MODEL: ${FALLBACK_LLM_MODEL:-}
+  LLM_MAX_ATTEMPTS: ${LLM_MAX_ATTEMPTS:-3}
+  LLM_RATE_LIMIT_MAX_ATTEMPTS: ${LLM_RATE_LIMIT_MAX_ATTEMPTS:-8}
+  BREAKER_FAILURE_THRESHOLD: ${BREAKER_FAILURE_THRESHOLD:-5}
+  BREAKER_COOLDOWN_SECONDS: ${BREAKER_COOLDOWN_SECONDS:-30}
+  RATE_LIMIT_ENABLED: ${RATE_LIMIT_ENABLED:-true}
+  RATE_LIMIT_REQUESTS: ${RATE_LIMIT_REQUESTS:-30}
+  RATE_LIMIT_WINDOW_SECONDS: ${RATE_LIMIT_WINDOW_SECONDS:-60}
+  CACHE_ENABLED: ${CACHE_ENABLED:-true}
+  CACHE_TTL_SECONDS: ${CACHE_TTL_SECONDS:-3600}
+  PRICE_PROMPT_PER_1K: ${PRICE_PROMPT_PER_1K:-}
+  PRICE_COMPLETION_PER_1K: ${PRICE_COMPLETION_PER_1K:-}
+  GUARDRAILS_ENABLED: ${GUARDRAILS_ENABLED:-true}
+  OTEL_EXPORTER_OTLP_ENDPOINT: ${OTEL_EXPORTER_OTLP_ENDPOINT:-}
+  LOG_LEVEL: ${LOG_LEVEL:-INFO}
+  WORKER_MODE: ${WORKER_MODE:-simple}
+  EVAL_RESULTS_DIR: ${EVAL_RESULTS_DIR:-/app/eval/results}
+  AUTO_EVAL_SAMPLE_RATE: ${AUTO_EVAL_SAMPLE_RATE:-0}
+
+services:
+  redis:
+    image: redis:7-alpine
+    command: ["redis-server", "--appendonly", "yes"]
+    volumes: [redis_data:/data]
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+    restart: unless-stopped
+
+  chroma:
+    image: chromadb/chroma:1.5.9
+    volumes: [chroma_data:/data]
+    healthcheck:
+      test: ["CMD", "bash", "-c", "exec 3<>/dev/tcp/127.0.0.1/8000 && printf 'GET /api/v2/heartbeat HTTP/1.0\\r\\n\\r\\n' >&3 && head -n1 <&3 | grep -q 200"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+      start_period: 5s
+    restart: unless-stopped
+
+  api:
+    build: {context: ., dockerfile: docker/Dockerfile.api}
+    image: triage-api:local
+    environment: *app-env
+    ports: ["127.0.0.1:8000:8000"]
+    volumes:
+      - app_data:/data
+      - ./corpus:/app/corpus:ro
+      - ./eval:/app/eval:ro
+    depends_on:
+      redis: {condition: service_healthy}
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request,sys; sys.exit(0 if urllib.request.urlopen('http://localhost:8000/healthz', timeout=3).status==200 else 1)"]
+      interval: 5s
+      timeout: 4s
+      retries: 12
+      start_period: 5s
+    restart: unless-stopped
+
+  worker:
+    build: {context: ., dockerfile: docker/Dockerfile.worker}
+    image: triage-worker:local
+    environment: *app-env
+    volumes:
+      - app_data:/data
+      - hf_cache:/hf_cache
+      - ./corpus:/app/corpus:ro
+    depends_on:
+      redis: {condition: service_healthy}
+      chroma: {condition: service_healthy}
+    healthcheck:
+      test: ["CMD", "python", "-c", "import os,redis,sys; redis.Redis.from_url(os.environ['REDIS_URL']).ping()"]
+      interval: 10s
+      timeout: 4s
+      retries: 6
+    restart: unless-stopped
+
+  # One-shot: builds/updates the index, then exits. A failure here does not stop the stack;
+  # it is visible in GET /v1/corpus and the UI.
+  ingest:
+    build: {context: ., dockerfile: docker/Dockerfile.worker}
+    image: triage-worker:local
+    command: ["python", "-m", "triage.retrieval.ingest"]
+    environment: *app-env
+    volumes:
+      - app_data:/data
+      - hf_cache:/hf_cache
+      - ./corpus:/app/corpus:ro
+    depends_on:
+      chroma: {condition: service_healthy}
+    restart: "no"
+
+  ui:
+    build: {context: ., dockerfile: docker/Dockerfile.ui}
+    image: triage-ui:local
+    environment:
+      API_BASE_URL: ${API_BASE_URL:-http://api:8000}
+    ports: ["127.0.0.1:8501:8501"]
+    depends_on:
+      api: {condition: service_healthy}
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request,sys; sys.exit(0 if urllib.request.urlopen('http://localhost:8501/_stcore/health', timeout=3).status==200 else 1)"]
+      interval: 10s
+      timeout: 4s
+      retries: 10
+      start_period: 10s
+    restart: unless-stopped
+
+  # Modern React frontend (primary UI). nginx serves the build and proxies /api to the api service.
+  # Streamlit above (:8501) remains available as a fallback UI.
+  web:
+    build: {context: ./frontend}
+    image: triage-web:local
+    ports: ["127.0.0.1:8080:80"]
+    depends_on:
+      api: {condition: service_healthy}
+    restart: unless-stopped
+
+  # ---------------- load testing (opt-in): see docs/LOAD_TEST.md ----------------
+  # Replaces ONLY the LLM. Point the workers at it with LLM_BASE_URL=http://llm-stub:9100/v1 LLM_MODEL=stub-model.
+  llm-stub:
+    image: triage-api:local
+    profiles: ["loadtest"]
+    working_dir: /
+    command: ["uvicorn", "loadtest.llm_stub:app", "--host", "0.0.0.0", "--port", "9100"]
+    environment:
+      STUB_LATENCY_MS: ${STUB_LATENCY_MS:-300}
+      STUB_ERROR_RATE: ${STUB_ERROR_RATE:-0}
+      STUB_RATE_LIMIT_RATE: ${STUB_RATE_LIMIT_RATE:-0}
+      STUB_TIMEOUT_RATE: ${STUB_TIMEOUT_RATE:-0}
+    volumes: ["./loadtest:/loadtest:ro"]
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request,sys; sys.exit(0 if urllib.request.urlopen('http://localhost:9100/healthz', timeout=3).status==200 else 1)"]
+      interval: 5s
+      timeout: 4s
+      retries: 10
+    restart: unless-stopped
+
+  locust:
+    build: {context: ., dockerfile: docker/Dockerfile.locust}
+    image: triage-locust:local
+    profiles: ["loadtest"]
+    environment:
+      E2E_TIMEOUT_S: ${E2E_TIMEOUT_S:-120}
+      RATE_PER_USER: ${RATE_PER_USER:-0}
+    volumes:
+      - ./loadtest:/loadtest
+    depends_on: [api]
+
+  # ---------------- observability (opt-in): docker compose --profile observability up -d ----------------
+  # Also set OTEL_EXPORTER_OTLP_ENDPOINT=http://jaeger:4318 in .env so api/worker export traces.
+  jaeger:
+    image: jaegertracing/all-in-one:1.76.0
+    profiles: ["observability"]
+    environment: {COLLECTOR_OTLP_ENABLED: "true"}
+    ports: ["127.0.0.1:16686:16686"]
+    restart: unless-stopped
+
+  prometheus:
+    image: prom/prometheus:v3.11.3
+    profiles: ["observability"]
+    volumes: ["./observability/prometheus.yml:/etc/prometheus/prometheus.yml:ro"]
+    ports: ["127.0.0.1:9090:9090"]
+    depends_on: [api]
+    restart: unless-stopped
+
+  cadvisor:
+    image: gcr.io/cadvisor/cadvisor:v0.55.1
+    profiles: ["observability"]
+    privileged: true            # cAdvisor needs host cgroup access; this is why it is opt-in and not in the default stack
+    volumes:
+      - /:/rootfs:ro
+      - /var/run:/var/run:ro
+      - /sys:/sys:ro
+      - /var/lib/docker/:/var/lib/docker:ro
+    ports: ["127.0.0.1:8081:8080"]
+    restart: unless-stopped
+
+  grafana:
+    image: grafana/grafana:12.4.4
+    profiles: ["observability"]
+    environment:
+      GF_SECURITY_ADMIN_USER: ${GRAFANA_ADMIN_USER:-admin}
+      GF_SECURITY_ADMIN_PASSWORD: ${GRAFANA_ADMIN_PASSWORD:-admin}   # local demo default; change via .env, never expose publicly
+      GF_AUTH_ANONYMOUS_ENABLED: "false"
+    volumes:
+      - ./observability/grafana/provisioning:/etc/grafana/provisioning:ro
+      - ./observability/grafana/dashboards:/var/lib/grafana/dashboards:ro
+    ports: ["127.0.0.1:3000:3000"]
+    depends_on: [prometheus]
+    restart: unless-stopped
+
+volumes:
+  redis_data:
+  chroma_data:
+  app_data:
+  hf_cache:

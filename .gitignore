@@ -1,0 +1,31 @@
+.env
+*.env
+!.env.example
+__pycache__/
+*.pyc
+.pytest_cache/
+data/
+.venv/
+*.sqlite3
+*.db
+*.db-wal
+*.db-shm
+.hf_cache/
+
+# local runtime state, caches and scratch (never commit)
+.nocache/
+uploads/
+*.sqlite3-journal
+.hf_cache/
+.idea/
+.vscode/
+*.log.tmp
+Thumbs.db
+hub/
+xet/
+.agent_harnesses.json
+
+# frontend build output and dependencies
+frontend/node_modules/
+frontend/dist/
+*.tsbuildinfo

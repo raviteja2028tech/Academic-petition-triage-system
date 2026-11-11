@@ -1,0 +1,97 @@
+{
+ "passed": 18,
+ "total": 18,
+ "runId": "run_0350f1f408a14565",
+ "steps": [
+  {
+   "name": "empty form shows inline validation errors",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "attendance percentage is calculated",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "submission confirmed with a run id",
+   "pass": true,
+   "detail": "run_0350f1f408a14565"
+  },
+  {
+   "name": "AI recommendation shown and labelled 'not a decision'",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "human review is stated as required",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "no human decision yet",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "uploaded document is listed",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "no horizontal overflow on desktop",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "examiner sees the student's petition and document",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "decision form refuses an empty submission",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "decision recorded and shown in history, separate from the AI recommendation",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "student sees the examiner's decision and note",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "system overview renders",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "mobile 390px: no horizontal scroll on /student/new",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "mobile 390px: no horizontal scroll on /examiner",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "mobile 390px: no horizontal scroll on /examiner/review/:id",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "mobile navigation drawer opens",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "no browser console errors",
+   "pass": true,
+   "detail": ""
+  }
+ ]
+}

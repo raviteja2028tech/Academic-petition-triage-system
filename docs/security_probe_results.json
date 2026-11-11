@@ -1,0 +1,165 @@
+{
+ "passed": 28,
+ "total": 28,
+ "results": [
+  {
+   "check": "traversal in run_id on download -> 404",
+   "pass": true,
+   "detail": 404
+  },
+  {
+   "check": "traversal in doc_id -> 404/422",
+   "pass": true,
+   "detail": 404
+  },
+  {
+   "check": "unknown document -> 404",
+   "pass": true,
+   "detail": 404
+  },
+  {
+   "check": "negative document id -> 404",
+   "pass": true,
+   "detail": 404
+  },
+  {
+   "check": "malformed petition (invalid json) -> 422 without traceback",
+   "pass": true,
+   "detail": 422
+  },
+  {
+   "check": "malformed petition (json array) -> 422 without traceback",
+   "pass": true,
+   "detail": 422
+  },
+  {
+   "check": "malformed petition (sql-ish student_ref) -> 422 without traceback",
+   "pass": true,
+   "detail": 422
+  },
+  {
+   "check": "malformed petition (wrong content type) -> 422 without traceback",
+   "pass": true,
+   "detail": 422
+  },
+  {
+   "check": "malformed petition (empty body) -> 422 without traceback",
+   "pass": true,
+   "detail": 422
+  },
+  {
+   "check": "runs table intact after the SQL-ish payload",
+   "pass": true,
+   "detail": 200
+  },
+  {
+   "check": "oversized petition body -> 413",
+   "pass": true,
+   "detail": 413
+  },
+  {
+   "check": "4 MB body through nginx -> 413",
+   "pass": true,
+   "detail": 413
+  },
+  {
+   "check": "upload html disguised as pdf -> 415",
+   "pass": true,
+   "detail": 415
+  },
+  {
+   "check": "upload exe disguised as png -> 415",
+   "pass": true,
+   "detail": 415
+  },
+  {
+   "check": "upload svg -> 415",
+   "pass": true,
+   "detail": 415
+  },
+  {
+   "check": "upload empty file -> 415",
+   "pass": true,
+   "detail": 415
+  },
+  {
+   "check": "oversized upload -> 413",
+   "pass": true,
+   "detail": 413
+  },
+  {
+   "check": "upload to unknown run -> 404",
+   "pass": true,
+   "detail": 404
+  },
+  {
+   "check": "upload without a file -> 422",
+   "pass": true,
+   "detail": 422
+  },
+  {
+   "check": "AI route vocabulary rejected as a human decision -> 422",
+   "pass": true,
+   "detail": 422
+  },
+  {
+   "check": "too-short note -> 422",
+   "pass": true,
+   "detail": 422
+  },
+  {
+   "check": "download served as attachment with nosniff + CSP",
+   "pass": true,
+   "detail": {
+    "date": "Sun, 08 Nov 2026 15:00:18 GMT",
+    "server": "uvicorn",
+    "x-content-type-options": "nosniff",
+    "content-security-policy": "default-src 'none'",
+    "content-type": "application/pdf",
+    "accept-ranges": "bytes",
+    "content-disposition": "attachment; filename=\"synthetic-test.pdf\"",
+    "content-length": "44",
+    "last-modified": "Sun, 08 Nov 2026 14:27:00 GMT",
+    "etag": "\"2edd6d4b66bf7fd77dce7bf3cea0ac93\"",
+    "x-correlation-id": "3498775a233c4d76b17bc52147fdf5b2"
+   }
+  },
+  {
+   "check": "web: nosniff + frame deny + referrer policy",
+   "pass": true,
+   "detail": {
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "DENY",
+    "referrer-policy": "no-referrer"
+   }
+  },
+  {
+   "check": "API key not present in any ops endpoint",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "LLM base URL not present in ops endpoints",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "no petition text in /metrics",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "CORS not enabled for arbitrary origins",
+   "pass": true,
+   "detail": 405
+  },
+  {
+   "check": "decision endpoint rate-limited under bursts (429 seen)",
+   "pass": true,
+   "detail": [
+    422,
+    429
+   ]
+  }
+ ]
+}

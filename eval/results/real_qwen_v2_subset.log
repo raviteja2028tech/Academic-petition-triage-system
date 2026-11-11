@@ -1,0 +1,20 @@
+ Container ml-ops-mini-project-chroma-1 Running 
+ Container ml-ops-mini-project-redis-1 Running 
+ Container ml-ops-mini-project-redis-1 Waiting 
+ Container ml-ops-mini-project-chroma-1 Waiting 
+ Container ml-ops-mini-project-redis-1 Healthy 
+ Container ml-ops-mini-project-chroma-1 Healthy 
+ Container ml-ops-mini-project-worker-run-4a429d70cc3b Creating 
+ Container ml-ops-mini-project-worker-run-4a429d70cc3b Created 
+building 'env' retriever from the corpus ...
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 1251.71it/s]
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+/app/src/triage/retrieval/embed.py:50: FutureWarning: The `get_sentence_embedding_dimension` method has been renamed to `get_embedding_dimension`.
+  dim = m.get_sentence_embedding_dimension()
+running 3 scenarios (real) ...
+  PASS  S01-difficult-80-medical-certificate  ->  escalated/refer-to-committee/committee_discretion
+  FAIL  S04-72-medical-certificate  ->  escalated/refer-to-committee/committee_discretion
+  PASS  S05-65-personal  ->  completed/reject/None
+
+task success 0.667 over 3 scenarios -> /app/eval/results/real_qwen_v2_subset.json and /app/eval/results/real_qwen_v2_subset.md
+

@@ -1,0 +1,33 @@
+ Container ml-ops-mini-project-chroma-1 Running 
+ Container ml-ops-mini-project-redis-1 Running 
+ Container ml-ops-mini-project-chroma-1 Waiting 
+ Container ml-ops-mini-project-redis-1 Waiting 
+ Container ml-ops-mini-project-chroma-1 Healthy 
+ Container ml-ops-mini-project-redis-1 Healthy 
+ Container ml-ops-mini-project-worker-run-42f55ab98d61 Creating 
+ Container ml-ops-mini-project-worker-run-42f55ab98d61 Created 
+building 'env' retriever from the corpus ...
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 2085.20it/s]
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+/app/src/triage/retrieval/embed.py:50: FutureWarning: The `get_sentence_embedding_dimension` method has been renamed to `get_embedding_dimension`.
+  dim = m.get_sentence_embedding_dimension()
+running 19 scenarios (real) ...
+resuming: 14 saved scenario result(s) kept
+  SKIP  S01-difficult-80-medical-certificate  (resumed from saved result)
+  SKIP  S02-78-hospital-record  (resumed from saved result)
+  SKIP  S03-82-medical-certificate  (resumed from saved result)
+  FAIL  S04-72-medical-certificate  ->  escalated/refer-to-committee/llm_unavailable
+  SKIP  S05-65-personal  (resumed from saved result)
+  FAIL  S06-80-medical-no-documents  ->  escalated/refer-to-committee/llm_unavailable
+  FAIL  S07-84-personal-no-documents  ->  escalated/refer-to-committee/llm_unavailable
+  SKIP  S08-unsupported-re-evaluation  (resumed from saved result)
+  SKIP  S09-unsupported-re-registration  (resumed from saved result)
+  SKIP  S10-unsupported-medical-leave  (resumed from saved result)
+  SKIP  S11-unsupported-grade-grievance  (resumed from saved result)
+  SKIP  S12-text-contradicts-fields  (resumed from saved result)
+  SKIP  S13-declared-attendance-but-revaluation  (resumed from saved result)
+  SKIP  S18-injection-ignore-instructions  (resumed from saved result)
+  SKIP  S19-injection-prompt-exfiltration  (resumed from saved result)
+  SKIP  S20-injection-fake-authority  (resumed from saved result)
+  SKIP  S21-abusive-petition  (resumed from saved result)
+

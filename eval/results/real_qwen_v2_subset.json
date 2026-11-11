@@ -1,0 +1,296 @@
+{
+ "meta": {
+  "generated_at": "2026-11-08T15:51:56+00:00",
+  "mode": "real",
+  "retriever": "env",
+  "git_rev": null,
+  "scenario_count": 3,
+  "research_prompt_version": "v2",
+  "corpus_sha256": {
+   "VTU B.Tech. Regulations 2025.pdf": "7969bb7d2b8269f3169ff5a480d2da4bf46800aabb454b4fece47f38679c6436"
+  },
+  "model": "qwen/qwen3.8-27b",
+  "interpretation": "REAL MODE: numbers reflect the configured model on synthetic petitions.",
+  "regulatory_caveat": "Expected outcomes encode the team's reading of the verified corpus. Scenarios flagged interpretation_dependent rest on open questions (10% = percentage points; Vice-Chancellor as decision maker; exam bye-laws not in corpus). Passing them is technical conformance, not proof of regulatory correctness."
+ },
+ "metrics": {
+  "context_relevance": {
+   "value": 0.5022,
+   "n": 3
+  },
+  "groundedness": {
+   "value": 1.0,
+   "n": 3
+  },
+  "faithfulness": {
+   "value": 1.0,
+   "n": 3
+  },
+  "hallucination_rate": {
+   "value": 0.0,
+   "n": 3
+  },
+  "attempted_hallucination_rate": {
+   "value": 0.0,
+   "n": 3
+  },
+  "gold_clause_recall": {
+   "value": 1.0,
+   "n": 3
+  },
+  "route_accuracy": {
+   "value": 0.6667,
+   "n": 3
+  },
+  "escalation_accuracy": {
+   "value": 0.6667,
+   "n": 3
+  },
+  "task_success_rate": {
+   "value": 0.6667,
+   "n": 3
+  }
+ },
+ "llm_judge": {
+  "enabled": false
+ },
+ "by_category": {
+  "supported": {
+   "n": 3,
+   "task_success": 0.6667,
+   "escalation_accuracy": 0.6667
+  }
+ },
+ "scenarios": [
+  {
+   "id": "S01-difficult-80-medical-certificate",
+   "category": "supported",
+   "status": "escalated",
+   "route": "refer-to-committee",
+   "escalation_required": true,
+   "escalation_reason": "committee_discretion",
+   "retrieved_clauses": [
+    "25ob10.0(4)",
+    "25ob10.0(5)",
+    "25ob10.0(6)",
+    "25ob10.0(7)",
+    "25ob23.0",
+    "25ob24.1(a)",
+    "25ob32.4(a)",
+    "25ob9.0(b)",
+    "25ob9.0(c)",
+    "noid-p8"
+   ],
+   "citations": [
+    "25OB10.0(5)",
+    "25OB10.0(4)"
+   ],
+   "llm_calls": 10,
+   "tool_calls": 8,
+   "interpretation_dependent": true,
+   "escalation_detail": "Referred for human decision.",
+   "position": "The student's attendance of 80% is below the 85% requirement, but the petition falls within the scope of the condonation provision for medical reasons. The decision to condone the shortage is reserved to the Vice-Chancellor based on recommendations, requiring human authority.",
+   "llm_errors": [],
+   "retry_events": 0,
+   "status_ok": true,
+   "route_ok": true,
+   "escalation_ok": true,
+   "llm_called_ok": true,
+   "gold_recall": 1.0,
+   "context_relevance": 0.36363636363636365,
+   "groundedness": 1.0,
+   "faithfulness": 1.0,
+   "hallucinated_output": false,
+   "unsupported_figures": [],
+   "attempted_hallucination": false,
+   "task_success": true,
+   "cost": {
+    "llm_calls": 10,
+    "prompt_tokens": 16877,
+    "completion_tokens": 903,
+    "token_source": "reported",
+    "estimated_cost_usd": null,
+    "pricing": "unavailable",
+    "note": "Token counts are provider-reported. No price configured (PRICE_PROMPT_PER_1K / PRICE_COMPLETION_PER_1K): cost unknown.",
+    "by_agent": {
+     "triage": {
+      "calls": 1,
+      "prompt_tokens": 414,
+      "completion_tokens": 73
+     },
+     "research": {
+      "calls": 8,
+      "prompt_tokens": 13685,
+      "completion_tokens": 452
+     },
+     "verifier": {
+      "calls": 1,
+      "prompt_tokens": 2778,
+      "completion_tokens": 378
+     }
+    }
+   },
+   "prompt_versions": {
+    "triage": "triage_v1",
+    "research": "research_v2",
+    "verifier": "verifier_v1"
+   },
+   "latency_s": 54.94
+  },
+  {
+   "id": "S04-72-medical-certificate",
+   "category": "supported",
+   "status": "escalated",
+   "route": "refer-to-committee",
+   "escalation_required": true,
+   "escalation_reason": "committee_discretion",
+   "retrieved_clauses": [
+    "25ob10.0(1)",
+    "25ob10.0(2)",
+    "25ob10.0(3)",
+    "25ob10.0(4)",
+    "25ob10.0(5)",
+    "25ob10.0(6)",
+    "25ob10.0(7)",
+    "25ob23.0",
+    "25ob24.1(a)",
+    "25ob32.4(a)",
+    "25ob9.0(b)",
+    "25ob9.0(c)",
+    "noid-p8"
+   ],
+   "citations": [
+    "25OB10.0(4)",
+    "25OB10.0(5)"
+   ],
+   "llm_calls": 10,
+   "tool_calls": 8,
+   "interpretation_dependent": true,
+   "escalation_detail": "The attendance shortage of 13% exceeds the maximum 10% condonation limit specified in clause 25OB10.0(5).",
+   "position": "The student's attendance of 72% is below the 85% requirement, but the 13% shortage is within the 10% maximum condonation limit if the medical grounds are validated by the Vice-Chancellor.",
+   "llm_errors": [],
+   "retry_events": 5,
+   "status_ok": false,
+   "route_ok": false,
+   "escalation_ok": false,
+   "llm_called_ok": true,
+   "gold_recall": 1.0,
+   "context_relevance": 0.5714285714285714,
+   "groundedness": 1.0,
+   "faithfulness": 1.0,
+   "hallucinated_output": false,
+   "unsupported_figures": [],
+   "attempted_hallucination": false,
+   "task_success": false,
+   "cost": {
+    "llm_calls": 10,
+    "prompt_tokens": 17492,
+    "completion_tokens": 1230,
+    "token_source": "reported",
+    "estimated_cost_usd": null,
+    "pricing": "unavailable",
+    "note": "Token counts are provider-reported. No price configured (PRICE_PROMPT_PER_1K / PRICE_COMPLETION_PER_1K): cost unknown.",
+    "by_agent": {
+     "triage": {
+      "calls": 1,
+      "prompt_tokens": 414,
+      "completion_tokens": 73
+     },
+     "research": {
+      "calls": 8,
+      "prompt_tokens": 14021,
+      "completion_tokens": 448
+     },
+     "verifier": {
+      "calls": 1,
+      "prompt_tokens": 3057,
+      "completion_tokens": 709
+     }
+    }
+   },
+   "prompt_versions": {
+    "triage": "triage_v1",
+    "research": "research_v2",
+    "verifier": "verifier_v1"
+   },
+   "latency_s": 131.182
+  },
+  {
+   "id": "S05-65-personal",
+   "category": "supported",
+   "status": "completed",
+   "route": "reject",
+   "escalation_required": false,
+   "escalation_reason": null,
+   "retrieved_clauses": [
+    "25ob10.0(1)",
+    "25ob10.0(2)",
+    "25ob10.0(3)",
+    "25ob10.0(4)",
+    "25ob10.0(5)",
+    "25ob10.0(6)",
+    "25ob10.0(7)",
+    "25ob15.0.1(i)",
+    "25ob23.0",
+    "25ob24.1(a)",
+    "25ob32.4(a)",
+    "25ob32.4(b)",
+    "25ob9.0(c)"
+   ],
+   "citations": [
+    "25OB10.0(5)"
+   ],
+   "llm_calls": 10,
+   "tool_calls": 8,
+   "interpretation_dependent": true,
+   "escalation_detail": "",
+   "position": "The petition is not eligible for attendance condonation because the stated reason of personal circumstances is not a valid ground under the regulations, and no documentary evidence was provided.",
+   "llm_errors": [],
+   "retry_events": 6,
+   "status_ok": true,
+   "route_ok": true,
+   "escalation_ok": true,
+   "llm_called_ok": true,
+   "gold_recall": 1.0,
+   "context_relevance": 0.5714285714285714,
+   "groundedness": 1.0,
+   "faithfulness": 1.0,
+   "hallucinated_output": false,
+   "unsupported_figures": [],
+   "attempted_hallucination": false,
+   "task_success": true,
+   "cost": {
+    "llm_calls": 10,
+    "prompt_tokens": 17533,
+    "completion_tokens": 897,
+    "token_source": "reported",
+    "estimated_cost_usd": null,
+    "pricing": "unavailable",
+    "note": "Token counts are provider-reported. No price configured (PRICE_PROMPT_PER_1K / PRICE_COMPLETION_PER_1K): cost unknown.",
+    "by_agent": {
+     "triage": {
+      "calls": 1,
+      "prompt_tokens": 408,
+      "completion_tokens": 72
+     },
+     "research": {
+      "calls": 8,
+      "prompt_tokens": 14236,
+      "completion_tokens": 518
+     },
+     "verifier": {
+      "calls": 1,
+      "prompt_tokens": 2889,
+      "completion_tokens": 307
+     }
+    }
+   },
+   "prompt_versions": {
+    "triage": "triage_v1",
+    "research": "research_v2",
+    "verifier": "verifier_v1"
+   },
+   "latency_s": 129.242
+  }
+ ]
+}

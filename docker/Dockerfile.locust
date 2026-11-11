@@ -1,0 +1,6 @@
+FROM python:3.11-slim
+RUN pip install --no-cache-dir locust==2.47.0
+RUN useradd -m -u 1000 app
+USER app
+WORKDIR /loadtest
+ENTRYPOINT ["locust"]

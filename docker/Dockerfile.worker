@@ -1,0 +1,13 @@
+# Heavy image (CPU torch + sentence-transformers + PyMuPDF + chromadb client). Used by `worker` and `ingest`.
+# The embedding model is NOT baked in: it is downloaded once into the hf_cache volume.
+FROM python:3.11-slim
+ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1 PYTHONPATH=/app/src HF_HOME=/hf_cache PROMPTS_DIR=/app/prompts
+WORKDIR /app
+RUN pip install --no-cache-dir torch --index-url https://download.pytorch.org/whl/cpu
+COPY requirements-api.txt requirements-worker.txt ./
+RUN pip install --no-cache-dir -r requirements-worker.txt
+COPY src ./src
+COPY prompts ./prompts
+RUN useradd -m -u 1000 app && mkdir -p /data /hf_cache && chown app:app /data /hf_cache
+USER app
+CMD ["python", "-m", "triage.worker.main"]

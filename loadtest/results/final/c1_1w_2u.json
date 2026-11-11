@@ -1,0 +1,118 @@
+{
+ "config": {
+  "name": "c1_1w_2u",
+  "workers": 1,
+  "users": 2,
+  "duration": 45
+ },
+ "started": "2026-11-08T16:34:45+00:00",
+ "locust": {
+  "submit": {
+   "requests": 23,
+   "failures": 0,
+   "p50_ms": 39.0,
+   "p95_ms": 120.0,
+   "p99_ms": 130.0,
+   "avg_ms": 48.94480086959843,
+   "rps": 0.5231608187401059
+  },
+  "poll": {
+   "requests": 168,
+   "failures": 0,
+   "p50_ms": 12.0,
+   "p95_ms": 31.0,
+   "p99_ms": 48.0,
+   "avg_ms": 15.120849333405724,
+   "rps": 3.821348589058165
+  },
+  "e2e": {
+   "requests": 21,
+   "failures": 0,
+   "p50_ms": 4200.0,
+   "p95_ms": 4200.0,
+   "p99_ms": 4300.0,
+   "avg_ms": 4029.757545107887,
+   "rps": 0.4776685736322706
+  }
+ },
+ "wall_seconds": 47.1,
+ "locust_exit": 0,
+ "throughput_runs_per_s": 0.467,
+ "queue_wait": {
+  "count": 23.0,
+  "mean_s": 1.735,
+  "p50_upper_bound_s": 2.0,
+  "p95_upper_bound_s": 5.0
+ },
+ "run_time": {
+  "count": 23.0,
+  "mean_s": 2.026
+ },
+ "worker_utilisation": 0.894,
+ "counters": {
+  "cache_hits_total{cache=\"retrieval\"}": 46.0,
+  "escalations_total{reason=\"committee_discretion\"}": 23.0,
+  "llm_calls_total{outcome=\"ok\",provider=\"primary\"}": 115.0,
+  "runs_total{status=\"escalated\"}": 23.0
+ },
+ "resources": {
+  "ml-ops-mini-project-api-1": {
+   "cpu_pct_avg": 9.7,
+   "cpu_pct_max": 37.3,
+   "mem_mb_avg": 58.8,
+   "mem_mb_max": 59.6,
+   "samples": 25
+  },
+  "ml-ops-mini-project-chroma-1": {
+   "cpu_pct_avg": 0.8,
+   "cpu_pct_max": 4.0,
+   "mem_mb_avg": 24.5,
+   "mem_mb_max": 24.7,
+   "samples": 25
+  },
+  "ml-ops-mini-project-llm-stub-1": {
+   "cpu_pct_avg": 4.9,
+   "cpu_pct_max": 32.7,
+   "mem_mb_avg": 33.8,
+   "mem_mb_max": 33.8,
+   "samples": 25
+  },
+  "ml-ops-mini-project-locust-run-a875df1347b4": {
+   "cpu_pct_avg": 0.9,
+   "cpu_pct_max": 1.3,
+   "mem_mb_avg": 38.4,
+   "mem_mb_max": 38.9,
+   "samples": 22
+  },
+  "ml-ops-mini-project-redis-1": {
+   "cpu_pct_avg": 1.8,
+   "cpu_pct_max": 4.6,
+   "mem_mb_avg": 6.0,
+   "mem_mb_max": 6.5,
+   "samples": 25
+  },
+  "ml-ops-mini-project-ui-1": {
+   "cpu_pct_avg": 4.2,
+   "cpu_pct_max": 24.0,
+   "mem_mb_avg": 134.1,
+   "mem_mb_max": 134.5,
+   "samples": 25
+  },
+  "ml-ops-mini-project-web-1": {
+   "cpu_pct_avg": 0.4,
+   "cpu_pct_max": 3.1,
+   "mem_mb_avg": 10.1,
+   "mem_mb_max": 10.4,
+   "samples": 25
+  },
+  "ml-ops-mini-project-worker-1": {
+   "cpu_pct_avg": 10.6,
+   "cpu_pct_max": 52.1,
+   "mem_mb_avg": 419.7,
+   "mem_mb_max": 440.1,
+   "samples": 25
+  }
+ },
+ "stub": null,
+ "finished": "2026-11-08T16:36:21+00:00"
+}

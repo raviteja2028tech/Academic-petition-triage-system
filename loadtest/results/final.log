@@ -1,0 +1,38 @@
+
+=== nominal_1w_0.3rps: workers=1 users=2 cache=True ===
+  e2e n=18 fail=0 p50=4200ms p95=4700ms | throughput=0.3/s util=0.549
+
+=== cache_on_1w_4u: workers=1 users=4 cache=True ===
+  e2e n=21 fail=0 p50=7800ms p95=8300ms | throughput=0.467/s util=0.985
+
+=== cache_off_1w_4u: workers=1 users=4 cache=False ===
+  e2e n=21 fail=0 p50=8300ms p95=8800ms | throughput=0.467/s util=0.953
+
+=== faults_errors20_rl10: workers=1 users=4 cache=True ===
+  e2e n=14 fail=0 p50=13000ms p95=15000ms | throughput=0.311/s util=0.96
+
+=== outage_100pct: workers=1 users=2 cache=True ===
+  e2e n=99 fail=0 p50=560ms p95=630ms | throughput=3.3/s util=0.509
+
+=== w1_12u: workers=1 users=12 cache=True ===
+  e2e n=21 fail=0 p50=23000ms p95=25000ms | throughput=0.467/s util=0.988
+
+=== w2_12u: workers=2 users=12 cache=True ===
+  e2e n=42 fail=0 p50=12000ms p95=12000ms | throughput=0.933/s util=0.969
+
+=== w3_12u: workers=3 users=12 cache=True ===
+  e2e n=63 fail=0 p50=7900ms p95=8400ms | throughput=1.4/s util=0.966
+
+=== c1_1w_1u: workers=1 users=1 cache=True ===
+  e2e n=17 fail=0 p50=2600ms p95=2700ms | throughput=0.378/s util=0.762
+
+=== c1_1w_2u: workers=1 users=2 cache=True ===
+  e2e n=21 fail=0 p50=4200ms p95=4200ms | throughput=0.467/s util=0.894
+
+=== c1_1w_4u: workers=1 users=4 cache=True ===
+  e2e n=23 fail=0 p50=7200ms p95=7800ms | throughput=0.511/s util=0.966
+
+=== c1_1w_8u: workers=1 users=8 cache=True ===
+  e2e n=22 fail=0 p50=16000ms p95=16000ms | throughput=0.489/s util=0.981
+
+raw results: loadtest/results/final

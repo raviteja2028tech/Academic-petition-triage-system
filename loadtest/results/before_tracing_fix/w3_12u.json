@@ -1,0 +1,132 @@
+{
+ "config": {
+  "name": "w3_12u",
+  "workers": 3,
+  "users": 12,
+  "duration": 45
+ },
+ "started": "2026-11-08T16:06:48+00:00",
+ "locust": {
+  "submit": {
+   "requests": 27,
+   "failures": 0,
+   "p50_ms": 71.0,
+   "p95_ms": 590.0,
+   "p99_ms": 590.0,
+   "avg_ms": 243.89733325915586,
+   "rps": 0.6114573647495115
+  },
+  "poll": {
+   "requests": 1006,
+   "failures": 0,
+   "p50_ms": 12.0,
+   "p95_ms": 38.0,
+   "p99_ms": 70.0,
+   "avg_ms": 16.048662751497286,
+   "rps": 22.7824484791855
+  },
+  "e2e": {
+   "requests": 15,
+   "failures": 0,
+   "p50_ms": 21000.0,
+   "p95_ms": 36000.0,
+   "p99_ms": 36000.0,
+   "avg_ms": 20371.557966868084,
+   "rps": 0.3396985359719508
+  }
+ },
+ "wall_seconds": 47.4,
+ "locust_exit": 0,
+ "throughput_runs_per_s": 0.333,
+ "queue_wait": {
+  "count": 18.0,
+  "mean_s": 20.343,
+  "p50_upper_bound_s": 30.0,
+  "p95_upper_bound_s": 60.0
+ },
+ "run_time": {
+  "count": 18.0,
+  "mean_s": 2.088
+ },
+ "worker_utilisation": 0.239,
+ "counters": {
+  "cache_hits_total{cache=\"retrieval\"}": 36.0,
+  "escalations_total{reason=\"committee_discretion\"}": 15.0,
+  "llm_calls_total{outcome=\"ok\",provider=\"primary\"}": 90.0,
+  "runs_total{status=\"escalated\"}": 18.0
+ },
+ "resources": {
+  "ml-ops-mini-project-api-1": {
+   "cpu_pct_avg": 24.8,
+   "cpu_pct_max": 51.4,
+   "mem_mb_avg": 64.1,
+   "mem_mb_max": 73.8,
+   "samples": 25
+  },
+  "ml-ops-mini-project-chroma-1": {
+   "cpu_pct_avg": 1.5,
+   "cpu_pct_max": 11.5,
+   "mem_mb_avg": 26.0,
+   "mem_mb_max": 26.5,
+   "samples": 25
+  },
+  "ml-ops-mini-project-llm-stub-1": {
+   "cpu_pct_avg": 4.8,
+   "cpu_pct_max": 27.3,
+   "mem_mb_avg": 34.7,
+   "mem_mb_max": 43.4,
+   "samples": 25
+  },
+  "ml-ops-mini-project-locust-run-10524e8ba672": {
+   "cpu_pct_avg": 5.4,
+   "cpu_pct_max": 35.3,
+   "mem_mb_avg": 41.4,
+   "mem_mb_max": 41.8,
+   "samples": 22
+  },
+  "ml-ops-mini-project-redis-1": {
+   "cpu_pct_avg": 3.3,
+   "cpu_pct_max": 9.3,
+   "mem_mb_avg": 7.3,
+   "mem_mb_max": 7.6,
+   "samples": 25
+  },
+  "ml-ops-mini-project-ui-1": {
+   "cpu_pct_avg": 5.9,
+   "cpu_pct_max": 30.8,
+   "mem_mb_avg": 134.2,
+   "mem_mb_max": 134.3,
+   "samples": 25
+  },
+  "ml-ops-mini-project-web-1": {
+   "cpu_pct_avg": 0.3,
+   "cpu_pct_max": 3.3,
+   "mem_mb_avg": 10.0,
+   "mem_mb_max": 10.1,
+   "samples": 25
+  },
+  "ml-ops-mini-project-worker-1": {
+   "cpu_pct_avg": 11.4,
+   "cpu_pct_max": 103.0,
+   "mem_mb_avg": 421.8,
+   "mem_mb_max": 445.6,
+   "samples": 25
+  },
+  "ml-ops-mini-project-worker-2": {
+   "cpu_pct_avg": 11.3,
+   "cpu_pct_max": 97.3,
+   "mem_mb_avg": 426.1,
+   "mem_mb_max": 445.3,
+   "samples": 25
+  },
+  "ml-ops-mini-project-worker-3": {
+   "cpu_pct_avg": 11.1,
+   "cpu_pct_max": 89.6,
+   "mem_mb_avg": 415.1,
+   "mem_mb_max": 433.3,
+   "samples": 25
+  }
+ },
+ "stub": null,
+ "finished": "2026-11-08T16:09:05+00:00"
+}

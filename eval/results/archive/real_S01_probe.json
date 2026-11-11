@@ -1,0 +1,107 @@
+{
+ "meta": {
+  "generated_at": "2026-11-08T13:53:10+00:00",
+  "mode": "real",
+  "retriever": "st",
+  "git_rev": "5a322cb",
+  "scenario_count": 1,
+  "research_prompt_version": "v1",
+  "corpus_sha256": {
+   "VTU B.Tech. Regulations 2025.pdf": "7969bb7d2b8269f3169ff5a480d2da4bf46800aabb454b4fece47f38679c6436"
+  },
+  "model": "openai/gpt-oss-20b",
+  "interpretation": "REAL MODE: numbers reflect the configured model on synthetic petitions.",
+  "regulatory_caveat": "Expected outcomes encode the team's reading of the verified corpus. Scenarios flagged interpretation_dependent rest on open questions (10% = percentage points; Vice-Chancellor as decision maker; exam bye-laws not in corpus). Passing them is technical conformance, not proof of regulatory correctness."
+ },
+ "metrics": {
+  "context_relevance": {
+   "value": null,
+   "n": 0
+  },
+  "groundedness": {
+   "value": null,
+   "n": 0
+  },
+  "faithfulness": {
+   "value": null,
+   "n": 0
+  },
+  "hallucination_rate": {
+   "value": null,
+   "n": 0
+  },
+  "attempted_hallucination_rate": {
+   "value": null,
+   "n": 0
+  },
+  "gold_clause_recall": {
+   "value": 0.0,
+   "n": 1
+  },
+  "route_accuracy": {
+   "value": 1.0,
+   "n": 1
+  },
+  "escalation_accuracy": {
+   "value": 0.0,
+   "n": 1
+  },
+  "task_success_rate": {
+   "value": 0.0,
+   "n": 1
+  }
+ },
+ "llm_judge": {
+  "enabled": false
+ },
+ "by_category": {
+  "supported": {
+   "n": 1,
+   "task_success": 0.0,
+   "escalation_accuracy": 0.0
+  }
+ },
+ "scenarios": [
+  {
+   "id": "S01-difficult-80-medical-certificate",
+   "category": "supported",
+   "status": "escalated",
+   "route": "refer-to-committee",
+   "escalation_required": true,
+   "escalation_reason": "agent_error",
+   "retrieved_clauses": [],
+   "citations": [],
+   "llm_calls": 0,
+   "tool_calls": 0,
+   "interpretation_dependent": true,
+   "status_ok": true,
+   "route_ok": true,
+   "escalation_ok": false,
+   "llm_called_ok": false,
+   "gold_recall": 0.0,
+   "context_relevance": null,
+   "groundedness": null,
+   "faithfulness": null,
+   "hallucinated_output": null,
+   "unsupported_figures": [],
+   "attempted_hallucination": null,
+   "task_success": false,
+   "cost": {
+    "llm_calls": 0,
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "token_source": "none",
+    "estimated_cost_usd": null,
+    "pricing": "unavailable",
+    "note": "No LLM calls were made.",
+    "by_agent": {}
+   },
+   "prompt_versions": {
+    "triage": "triage_v1",
+    "research": "research_v1",
+    "verifier": "verifier_v1"
+   },
+   "latency_s": 12.289
+  }
+ ]
+}

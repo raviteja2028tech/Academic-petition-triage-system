@@ -1,0 +1,1450 @@
+[
+ {
+  "config": {
+   "name": "nominal_1w_0.3rps",
+   "workers": 1,
+   "users": 2,
+   "duration": 60,
+   "rate_per_user": 0.15
+  },
+  "started": "2026-11-08T15:53:05+00:00",
+  "locust": {
+   "submit": {
+    "requests": 12,
+    "failures": 0,
+    "p50_ms": 34.0,
+    "p95_ms": 110.0,
+    "p99_ms": 110.0,
+    "avg_ms": 44.090869250036725,
+    "rps": 0.2037815722394308
+   },
+   "poll": {
+    "requests": 219,
+    "failures": 0,
+    "p50_ms": 12.0,
+    "p95_ms": 19.0,
+    "p99_ms": 26.0,
+    "avg_ms": 13.318181547921712,
+    "rps": 3.7190136933696123
+   },
+   "e2e": {
+    "requests": 10,
+    "failures": 0,
+    "p50_ms": 12000.0,
+    "p95_ms": 12000.0,
+    "p99_ms": 12000.0,
+    "avg_ms": 10023.070764541626,
+    "rps": 0.16981797686619232
+   }
+  },
+  "wall_seconds": 62.1,
+  "locust_exit": 0,
+  "throughput_runs_per_s": 0.167,
+  "queue_wait": {
+   "count": 12.0,
+   "mean_s": 8.087,
+   "p50_upper_bound_s": 10.0,
+   "p95_upper_bound_s": 10.0
+  },
+  "run_time": {
+   "count": 12.0,
+   "mean_s": 1.858
+  },
+  "worker_utilisation": 0.333,
+  "counters": {
+   "cache_hits_total{cache=\"retrieval\"}": 24.0,
+   "escalations_total{reason=\"committee_discretion\"}": 12.0,
+   "llm_calls_total{outcome=\"ok\",provider=\"primary\"}": 60.0,
+   "runs_total{status=\"escalated\"}": 12.0
+  },
+  "resources": {
+   "ml-ops-mini-project-api-1": {
+    "cpu_pct_avg": 8.8,
+    "cpu_pct_max": 41.6,
+    "mem_mb_avg": 59.5,
+    "mem_mb_max": 68.8,
+    "samples": 33
+   },
+   "ml-ops-mini-project-chroma-1": {
+    "cpu_pct_avg": 1.0,
+    "cpu_pct_max": 4.6,
+    "mem_mb_avg": 23.9,
+    "mem_mb_max": 24.2,
+    "samples": 33
+   },
+   "ml-ops-mini-project-llm-stub-1": {
+    "cpu_pct_avg": 5.0,
+    "cpu_pct_max": 37.8,
+    "mem_mb_avg": 34.3,
+    "mem_mb_max": 43.9,
+    "samples": 33
+   },
+   "ml-ops-mini-project-locust-run-d5e3f144416c": {
+    "cpu_pct_avg": 0.8,
+    "cpu_pct_max": 1.1,
+    "mem_mb_avg": 39.1,
+    "mem_mb_max": 39.2,
+    "samples": 29
+   },
+   "ml-ops-mini-project-redis-1": {
+    "cpu_pct_avg": 1.6,
+    "cpu_pct_max": 5.1,
+    "mem_mb_avg": 4.6,
+    "mem_mb_max": 4.8,
+    "samples": 33
+   },
+   "ml-ops-mini-project-ui-1": {
+    "cpu_pct_avg": 2.8,
+    "cpu_pct_max": 27.0,
+    "mem_mb_avg": 135.1,
+    "mem_mb_max": 147.2,
+    "samples": 33
+   },
+   "ml-ops-mini-project-web-1": {
+    "cpu_pct_avg": 0.8,
+    "cpu_pct_max": 4.8,
+    "mem_mb_avg": 10.0,
+    "mem_mb_max": 10.2,
+    "samples": 33
+   },
+   "ml-ops-mini-project-worker-1": {
+    "cpu_pct_avg": 9.1,
+    "cpu_pct_max": 70.0,
+    "mem_mb_avg": 419.4,
+    "mem_mb_max": 444.2,
+    "samples": 33
+   }
+  },
+  "stub": null,
+  "finished": "2026-11-08T15:55:04+00:00"
+ },
+ {
+  "config": {
+   "name": "cache_on_1w_4u",
+   "workers": 1,
+   "users": 4,
+   "duration": 45,
+   "cache": true
+  },
+  "started": "2026-11-08T15:55:04+00:00",
+  "locust": {
+   "submit": {
+    "requests": 11,
+    "failures": 0,
+    "p50_ms": 46.0,
+    "p95_ms": 160.0,
+    "p99_ms": 160.0,
+    "avg_ms": 75.98513727275117,
+    "rps": 0.2494546164269309
+   },
+   "poll": {
+    "requests": 340,
+    "failures": 0,
+    "p50_ms": 12.0,
+    "p95_ms": 31.0,
+    "p99_ms": 42.0,
+    "avg_ms": 14.846905335266188,
+    "rps": 7.71041541683241
+   },
+   "e2e": {
+    "requests": 7,
+    "failures": 0,
+    "p50_ms": 20000.0,
+    "p95_ms": 24000.0,
+    "p99_ms": 24000.0,
+    "avg_ms": 16762.88001877921,
+    "rps": 0.15874384681713785
+   }
+  },
+  "wall_seconds": 47.1,
+  "locust_exit": 0,
+  "throughput_runs_per_s": 0.156,
+  "queue_wait": {
+   "count": 9.0,
+   "mean_s": 16.134,
+   "p50_upper_bound_s": 30.0,
+   "p95_upper_bound_s": 30.0
+  },
+  "run_time": {
+   "count": 9.0,
+   "mean_s": 2.011
+  },
+  "worker_utilisation": 0.348,
+  "counters": {
+   "cache_hits_total{cache=\"retrieval\"}": 18.0,
+   "escalations_total{reason=\"committee_discretion\"}": 8.0,
+   "llm_calls_total{outcome=\"ok\",provider=\"primary\"}": 45.0,
+   "runs_total{status=\"escalated\"}": 9.0
+  },
+  "resources": {
+   "ml-ops-mini-project-api-1": {
+    "cpu_pct_avg": 12.1,
+    "cpu_pct_max": 44.7,
+    "mem_mb_avg": 60.1,
+    "mem_mb_max": 71.8,
+    "samples": 25
+   },
+   "ml-ops-mini-project-chroma-1": {
+    "cpu_pct_avg": 0.7,
+    "cpu_pct_max": 4.0,
+    "mem_mb_avg": 23.5,
+    "mem_mb_max": 23.5,
+    "samples": 25
+   },
+   "ml-ops-mini-project-llm-stub-1": {
+    "cpu_pct_avg": 3.6,
+    "cpu_pct_max": 22.9,
+    "mem_mb_avg": 34.3,
+    "mem_mb_max": 46.0,
+    "samples": 25
+   },
+   "ml-ops-mini-project-locust-run-71d2aa303fef": {
+    "cpu_pct_avg": 1.3,
+    "cpu_pct_max": 1.5,
+    "mem_mb_avg": 39.3,
+    "mem_mb_max": 39.4,
+    "samples": 22
+   },
+   "ml-ops-mini-project-redis-1": {
+    "cpu_pct_avg": 1.8,
+    "cpu_pct_max": 4.7,
+    "mem_mb_avg": 4.5,
+    "mem_mb_max": 4.7,
+    "samples": 25
+   },
+   "ml-ops-mini-project-ui-1": {
+    "cpu_pct_avg": 4.8,
+    "cpu_pct_max": 26.1,
+    "mem_mb_avg": 135.3,
+    "mem_mb_max": 148.2,
+    "samples": 25
+   },
+   "ml-ops-mini-project-web-1": {
+    "cpu_pct_avg": 0.0,
+    "cpu_pct_max": 0.0,
+    "mem_mb_avg": 10.0,
+    "mem_mb_max": 10.0,
+    "samples": 25
+   },
+   "ml-ops-mini-project-worker-1": {
+    "cpu_pct_avg": 5.9,
+    "cpu_pct_max": 70.9,
+    "mem_mb_avg": 418.0,
+    "mem_mb_max": 420.7,
+    "samples": 25
+   }
+  },
+  "stub": null,
+  "finished": "2026-11-08T15:56:49+00:00"
+ },
+ {
+  "config": {
+   "name": "cache_off_1w_4u",
+   "workers": 1,
+   "users": 4,
+   "duration": 45,
+   "cache": false
+  },
+  "started": "2026-11-08T15:56:49+00:00",
+  "locust": {
+   "submit": {
+    "requests": 9,
+    "failures": 0,
+    "p50_ms": 50.0,
+    "p95_ms": 160.0,
+    "p99_ms": 160.0,
+    "avg_ms": 85.05837833339076,
+    "rps": 0.20451675561113758
+   },
+   "poll": {
+    "requests": 340,
+    "failures": 0,
+    "p50_ms": 12.0,
+    "p95_ms": 27.0,
+    "p99_ms": 42.0,
+    "avg_ms": 14.316170670591578,
+    "rps": 7.7261885453096415
+   },
+   "e2e": {
+    "requests": 5,
+    "failures": 0,
+    "p50_ms": 20000.0,
+    "p95_ms": 36000.0,
+    "p99_ms": 36000.0,
+    "avg_ms": 19932.20992088318,
+    "rps": 0.11362041978396532
+   }
+  },
+  "wall_seconds": 47.2,
+  "locust_exit": 0,
+  "throughput_runs_per_s": 0.111,
+  "queue_wait": {
+   "count": 6.0,
+   "mean_s": 20.112,
+   "p50_upper_bound_s": 30.0,
+   "p95_upper_bound_s": 60.0
+  },
+  "run_time": {
+   "count": 6.0,
+   "mean_s": 2.118
+  },
+  "worker_utilisation": 0.243,
+  "counters": {
+   "escalations_total{reason=\"committee_discretion\"}": 5.0,
+   "llm_calls_total{outcome=\"ok\",provider=\"primary\"}": 30.0,
+   "runs_total{status=\"escalated\"}": 6.0
+  },
+  "resources": {
+   "ml-ops-mini-project-api-1": {
+    "cpu_pct_avg": 12.2,
+    "cpu_pct_max": 36.1,
+    "mem_mb_avg": 60.4,
+    "mem_mb_max": 72.8,
+    "samples": 25
+   },
+   "ml-ops-mini-project-chroma-1": {
+    "cpu_pct_avg": 0.9,
+    "cpu_pct_max": 3.6,
+    "mem_mb_avg": 24.6,
+    "mem_mb_max": 24.9,
+    "samples": 25
+   },
+   "ml-ops-mini-project-llm-stub-1": {
+    "cpu_pct_avg": 4.6,
+    "cpu_pct_max": 23.6,
+    "mem_mb_avg": 34.2,
+    "mem_mb_max": 44.2,
+    "samples": 25
+   },
+   "ml-ops-mini-project-locust-run-e7f6c7ebd189": {
+    "cpu_pct_avg": 1.3,
+    "cpu_pct_max": 1.7,
+    "mem_mb_avg": 39.3,
+    "mem_mb_max": 39.4,
+    "samples": 22
+   },
+   "ml-ops-mini-project-redis-1": {
+    "cpu_pct_avg": 1.9,
+    "cpu_pct_max": 4.8,
+    "mem_mb_avg": 4.5,
+    "mem_mb_max": 4.7,
+    "samples": 25
+   },
+   "ml-ops-mini-project-ui-1": {
+    "cpu_pct_avg": 0.6,
+    "cpu_pct_max": 0.7,
+    "mem_mb_avg": 134.4,
+    "mem_mb_max": 134.4,
+    "samples": 25
+   },
+   "ml-ops-mini-project-web-1": {
+    "cpu_pct_avg": 0.2,
+    "cpu_pct_max": 4.1,
+    "mem_mb_avg": 10.0,
+    "mem_mb_max": 10.1,
+    "samples": 25
+   },
+   "ml-ops-mini-project-worker-1": {
+    "cpu_pct_avg": 7.3,
+    "cpu_pct_max": 54.1,
+    "mem_mb_avg": 421.5,
+    "mem_mb_max": 437.0,
+    "samples": 25
+   }
+  },
+  "stub": null,
+  "finished": "2026-11-08T15:58:52+00:00"
+ },
+ {
+  "config": {
+   "name": "faults_errors20_rl10",
+   "workers": 1,
+   "users": 4,
+   "duration": 45,
+   "stub_error_rate": 0.2,
+   "stub_rate_limit_rate": 0.1
+  },
+  "started": "2026-11-08T15:58:52+00:00",
+  "locust": {
+   "submit": {
+    "requests": 9,
+    "failures": 0,
+    "p50_ms": 47.0,
+    "p95_ms": 200.0,
+    "p99_ms": 200.0,
+    "avg_ms": 100.01691044453764,
+    "rps": 0.2043075193405462
+   },
+   "poll": {
+    "requests": 340,
+    "failures": 0,
+    "p50_ms": 12.0,
+    "p95_ms": 24.0,
+    "p99_ms": 54.0,
+    "avg_ms": 14.166542458844882,
+    "rps": 7.71828406397619
+   },
+   "e2e": {
+    "requests": 5,
+    "failures": 0,
+    "p50_ms": 23000.0,
+    "p95_ms": 34000.0,
+    "p99_ms": 34000.0,
+    "avg_ms": 20675.157117843628,
+    "rps": 0.11350417741141455
+   }
+  },
+  "wall_seconds": 47.1,
+  "locust_exit": 0,
+  "throughput_runs_per_s": 0.111,
+  "queue_wait": {
+   "count": 7.0,
+   "mean_s": 20.43,
+   "p50_upper_bound_s": 30.0,
+   "p95_upper_bound_s": 60.0
+  },
+  "run_time": {
+   "count": 6.0,
+   "mean_s": 3.12
+  },
+  "worker_utilisation": 0.359,
+  "counters": {
+   "cache_hits_total{cache=\"retrieval\"}": 12.0,
+   "escalations_total{reason=\"committee_discretion\"}": 6.0,
+   "escalations_total{reason=\"llm_unavailable\"}": 1.0,
+   "llm_calls_total{outcome=\"ok\",provider=\"primary\"}": 30.0,
+   "llm_calls_total{outcome=\"server\",provider=\"primary\"}": 1.0,
+   "llm_retries_total{kind=\"rate_limit\",provider=\"primary\"}": 5.0,
+   "llm_retries_total{kind=\"server\",provider=\"primary\"}": 12.0,
+   "runs_total{status=\"escalated\"}": 6.0
+  },
+  "resources": {
+   "ml-ops-mini-project-api-1": {
+    "cpu_pct_avg": 11.4,
+    "cpu_pct_max": 32.9,
+    "mem_mb_avg": 59.5,
+    "mem_mb_max": 60.1,
+    "samples": 25
+   },
+   "ml-ops-mini-project-chroma-1": {
+    "cpu_pct_avg": 0.6,
+    "cpu_pct_max": 3.4,
+    "mem_mb_avg": 24.5,
+    "mem_mb_max": 24.7,
+    "samples": 25
+   },
+   "ml-ops-mini-project-llm-stub-1": {
+    "cpu_pct_avg": 4.6,
+    "cpu_pct_max": 23.4,
+    "mem_mb_avg": 33.8,
+    "mem_mb_max": 34.0,
+    "samples": 25
+   },
+   "ml-ops-mini-project-locust-run-3e96471c6513": {
+    "cpu_pct_avg": 1.4,
+    "cpu_pct_max": 1.6,
+    "mem_mb_avg": 39.3,
+    "mem_mb_max": 39.4,
+    "samples": 22
+   },
+   "ml-ops-mini-project-redis-1": {
+    "cpu_pct_avg": 1.7,
+    "cpu_pct_max": 4.7,
+    "mem_mb_avg": 4.5,
+    "mem_mb_max": 4.7,
+    "samples": 25
+   },
+   "ml-ops-mini-project-ui-1": {
+    "cpu_pct_avg": 2.8,
+    "cpu_pct_max": 22.8,
+    "mem_mb_avg": 134.4,
+    "mem_mb_max": 134.4,
+    "samples": 25
+   },
+   "ml-ops-mini-project-web-1": {
+    "cpu_pct_avg": 0.0,
+    "cpu_pct_max": 0.0,
+    "mem_mb_avg": 10.0,
+    "mem_mb_max": 10.1,
+    "samples": 25
+   },
+   "ml-ops-mini-project-worker-1": {
+    "cpu_pct_avg": 7.1,
+    "cpu_pct_max": 57.8,
+    "mem_mb_avg": 421.4,
+    "mem_mb_max": 435.7,
+    "samples": 25
+   }
+  },
+  "stub": null,
+  "finished": "2026-11-08T16:01:09+00:00"
+ },
+ {
+  "config": {
+   "name": "outage_100pct",
+   "workers": 1,
+   "users": 2,
+   "duration": 30,
+   "stub_error_rate": 1.0,
+   "breaker_threshold": 3
+  },
+  "started": "2026-11-08T16:01:09+00:00",
+  "locust": {
+   "submit": {
+    "requests": 9,
+    "failures": 0,
+    "p50_ms": 41.0,
+    "p95_ms": 110.0,
+    "p99_ms": 110.0,
+    "avg_ms": 55.877092666782524,
+    "rps": 0.3139874645685513
+   },
+   "poll": {
+    "requests": 110,
+    "failures": 0,
+    "p50_ms": 13.0,
+    "p95_ms": 35.0,
+    "p99_ms": 43.0,
+    "avg_ms": 15.381972499976241,
+    "rps": 3.8376245669489606
+   },
+   "e2e": {
+    "requests": 7,
+    "failures": 0,
+    "p50_ms": 8300.0,
+    "p95_ms": 9900.0,
+    "p99_ms": 9900.0,
+    "avg_ms": 7147.369861602783,
+    "rps": 0.24421247244220656
+   }
+  },
+  "wall_seconds": 32.1,
+  "locust_exit": 0,
+  "throughput_runs_per_s": 0.233,
+  "queue_wait": {
+   "count": 9.0,
+   "mean_s": 6.76,
+   "p50_upper_bound_s": 10.0,
+   "p95_upper_bound_s": 10.0
+  },
+  "run_time": {
+   "count": 9.0,
+   "mean_s": 0.333
+  },
+  "worker_utilisation": 0.081,
+  "counters": {
+   "escalations_total{reason=\"llm_unavailable\"}": 8.0,
+   "llm_breaker_rejected_total{provider=\"primary\"}": 8.0,
+   "llm_calls_total{outcome=\"server\",provider=\"primary\"}": 1.0,
+   "llm_retries_total{kind=\"server\",provider=\"primary\"}": 2.0,
+   "runs_total{status=\"escalated\"}": 9.0
+  },
+  "resources": {
+   "ml-ops-mini-project-api-1": {
+    "cpu_pct_avg": 8.0,
+    "cpu_pct_max": 31.4,
+    "mem_mb_avg": 59.5,
+    "mem_mb_max": 69.0,
+    "samples": 18
+   },
+   "ml-ops-mini-project-chroma-1": {
+    "cpu_pct_avg": 0.6,
+    "cpu_pct_max": 3.4,
+    "mem_mb_avg": 10.9,
+    "mem_mb_max": 11.1,
+    "samples": 18
+   },
+   "ml-ops-mini-project-llm-stub-1": {
+    "cpu_pct_avg": 3.7,
+    "cpu_pct_max": 22.0,
+    "mem_mb_avg": 34.8,
+    "mem_mb_max": 44.1,
+    "samples": 18
+   },
+   "ml-ops-mini-project-locust-run-942240bf38d1": {
+    "cpu_pct_avg": 2.4,
+    "cpu_pct_max": 25.0,
+    "mem_mb_avg": 39.0,
+    "mem_mb_max": 39.1,
+    "samples": 15
+   },
+   "ml-ops-mini-project-redis-1": {
+    "cpu_pct_avg": 1.5,
+    "cpu_pct_max": 3.8,
+    "mem_mb_avg": 4.6,
+    "mem_mb_max": 4.8,
+    "samples": 18
+   },
+   "ml-ops-mini-project-ui-1": {
+    "cpu_pct_avg": 0.6,
+    "cpu_pct_max": 0.6,
+    "mem_mb_avg": 134.4,
+    "mem_mb_max": 134.4,
+    "samples": 18
+   },
+   "ml-ops-mini-project-web-1": {
+    "cpu_pct_avg": 0.5,
+    "cpu_pct_max": 3.5,
+    "mem_mb_avg": 10.0,
+    "mem_mb_max": 10.4,
+    "samples": 18
+   },
+   "ml-ops-mini-project-worker-1": {
+    "cpu_pct_avg": 6.9,
+    "cpu_pct_max": 53.5,
+    "mem_mb_avg": 411.0,
+    "mem_mb_max": 411.2,
+    "samples": 18
+   }
+  },
+  "stub": null,
+  "finished": "2026-11-08T16:02:42+00:00"
+ },
+ {
+  "config": {
+   "name": "w1_12u",
+   "workers": 1,
+   "users": 12,
+   "duration": 45
+  },
+  "started": "2026-11-08T16:02:42+00:00",
+  "locust": {
+   "submit": {
+    "requests": 17,
+    "failures": 0,
+    "p50_ms": 360.0,
+    "p95_ms": 490.0,
+    "p99_ms": 490.0,
+    "avg_ms": 305.29438447068543,
+    "rps": 0.38506817334502097
+   },
+   "poll": {
+    "requests": 1013,
+    "failures": 0,
+    "p50_ms": 12.0,
+    "p95_ms": 25.0,
+    "p99_ms": 45.0,
+    "avg_ms": 13.740866765059089,
+    "rps": 22.94553291755919
+   },
+   "e2e": {
+    "requests": 5,
+    "failures": 0,
+    "p50_ms": 21000.0,
+    "p95_ms": 39000.0,
+    "p99_ms": 39000.0,
+    "avg_ms": 20950.789260864258,
+    "rps": 0.11325534510147675
+   }
+  },
+  "wall_seconds": 47.2,
+  "locust_exit": 0,
+  "throughput_runs_per_s": 0.111,
+  "queue_wait": {
+   "count": 6.0,
+   "mean_s": 23.03,
+   "p50_upper_bound_s": 30.0,
+   "p95_upper_bound_s": 60.0
+  },
+  "run_time": {
+   "count": 6.0,
+   "mean_s": 2.06
+  },
+  "worker_utilisation": 0.237,
+  "counters": {
+   "cache_hits_total{cache=\"retrieval\"}": 12.0,
+   "escalations_total{reason=\"committee_discretion\"}": 5.0,
+   "llm_calls_total{outcome=\"ok\",provider=\"primary\"}": 30.0,
+   "runs_total{status=\"escalated\"}": 6.0
+  },
+  "resources": {
+   "ml-ops-mini-project-api-1": {
+    "cpu_pct_avg": 23.0,
+    "cpu_pct_max": 58.8,
+    "mem_mb_avg": 61.9,
+    "mem_mb_max": 69.8,
+    "samples": 25
+   },
+   "ml-ops-mini-project-chroma-1": {
+    "cpu_pct_avg": 0.8,
+    "cpu_pct_max": 3.6,
+    "mem_mb_avg": 24.0,
+    "mem_mb_max": 24.3,
+    "samples": 25
+   },
+   "ml-ops-mini-project-llm-stub-1": {
+    "cpu_pct_avg": 4.3,
+    "cpu_pct_max": 28.5,
+    "mem_mb_avg": 33.9,
+    "mem_mb_max": 36.2,
+    "samples": 25
+   },
+   "ml-ops-mini-project-locust-run-286978a9d11a": {
+    "cpu_pct_avg": 3.8,
+    "cpu_pct_max": 5.3,
+    "mem_mb_avg": 40.6,
+    "mem_mb_max": 41.0,
+    "samples": 22
+   },
+   "ml-ops-mini-project-redis-1": {
+    "cpu_pct_avg": 2.9,
+    "cpu_pct_max": 5.5,
+    "mem_mb_avg": 4.5,
+    "mem_mb_max": 4.8,
+    "samples": 25
+   },
+   "ml-ops-mini-project-ui-1": {
+    "cpu_pct_avg": 0.5,
+    "cpu_pct_max": 0.6,
+    "mem_mb_avg": 134.4,
+    "mem_mb_max": 134.4,
+    "samples": 25
+   },
+   "ml-ops-mini-project-web-1": {
+    "cpu_pct_avg": 0.5,
+    "cpu_pct_max": 3.1,
+    "mem_mb_avg": 10.0,
+    "mem_mb_max": 10.1,
+    "samples": 25
+   },
+   "ml-ops-mini-project-worker-1": {
+    "cpu_pct_avg": 5.3,
+    "cpu_pct_max": 56.3,
+    "mem_mb_avg": 418.5,
+    "mem_mb_max": 429.2,
+    "samples": 25
+   }
+  },
+  "stub": null,
+  "finished": "2026-11-08T16:04:25+00:00"
+ },
+ {
+  "config": {
+   "name": "w2_12u",
+   "workers": 2,
+   "users": 12,
+   "duration": 45
+  },
+  "started": "2026-11-08T16:04:25+00:00",
+  "locust": {
+   "submit": {
+    "requests": 26,
+    "failures": 0,
+    "p50_ms": 55.0,
+    "p95_ms": 440.0,
+    "p99_ms": 460.0,
+    "avg_ms": 217.33416734615764,
+    "rps": 0.5893072458964896
+   },
+   "poll": {
+    "requests": 1009,
+    "failures": 0,
+    "p50_ms": 12.0,
+    "p95_ms": 30.0,
+    "p99_ms": 63.0,
+    "avg_ms": 14.900680559950189,
+    "rps": 22.869654273444542
+   },
+   "e2e": {
+    "requests": 14,
+    "failures": 0,
+    "p50_ms": 21000.0,
+    "p95_ms": 36000.0,
+    "p99_ms": 36000.0,
+    "avg_ms": 20178.28404903412,
+    "rps": 0.317319286251956
+   }
+  },
+  "wall_seconds": 47.3,
+  "locust_exit": 0,
+  "throughput_runs_per_s": 0.311,
+  "queue_wait": {
+   "count": 18.0,
+   "mean_s": 21.269,
+   "p50_upper_bound_s": 30.0,
+   "p95_upper_bound_s": 60.0
+  },
+  "run_time": {
+   "count": 18.0,
+   "mean_s": 2.004
+  },
+  "worker_utilisation": 0.345,
+  "counters": {
+   "cache_hits_total{cache=\"retrieval\"}": 36.0,
+   "escalations_total{reason=\"committee_discretion\"}": 16.0,
+   "llm_calls_total{outcome=\"ok\",provider=\"primary\"}": 90.0,
+   "runs_total{status=\"escalated\"}": 18.0
+  },
+  "resources": {
+   "ml-ops-mini-project-api-1": {
+    "cpu_pct_avg": 25.8,
+    "cpu_pct_max": 53.1,
+    "mem_mb_avg": 63.4,
+    "mem_mb_max": 75.1,
+    "samples": 25
+   },
+   "ml-ops-mini-project-chroma-1": {
+    "cpu_pct_avg": 0.6,
+    "cpu_pct_max": 3.5,
+    "mem_mb_avg": 24.9,
+    "mem_mb_max": 25.2,
+    "samples": 25
+   },
+   "ml-ops-mini-project-llm-stub-1": {
+    "cpu_pct_avg": 5.5,
+    "cpu_pct_max": 33.8,
+    "mem_mb_avg": 34.3,
+    "mem_mb_max": 47.4,
+    "samples": 25
+   },
+   "ml-ops-mini-project-locust-run-8ac3669f5f21": {
+    "cpu_pct_avg": 3.8,
+    "cpu_pct_max": 4.4,
+    "mem_mb_avg": 40.7,
+    "mem_mb_max": 41.2,
+    "samples": 22
+   },
+   "ml-ops-mini-project-redis-1": {
+    "cpu_pct_avg": 2.9,
+    "cpu_pct_max": 6.4,
+    "mem_mb_avg": 4.7,
+    "mem_mb_max": 5.0,
+    "samples": 25
+   },
+   "ml-ops-mini-project-ui-1": {
+    "cpu_pct_avg": 0.5,
+    "cpu_pct_max": 0.6,
+    "mem_mb_avg": 134.4,
+    "mem_mb_max": 134.4,
+    "samples": 25
+   },
+   "ml-ops-mini-project-web-1": {
+    "cpu_pct_avg": 0.4,
+    "cpu_pct_max": 3.4,
+    "mem_mb_avg": 10.0,
+    "mem_mb_max": 10.2,
+    "samples": 25
+   },
+   "ml-ops-mini-project-worker-1": {
+    "cpu_pct_avg": 8.0,
+    "cpu_pct_max": 62.1,
+    "mem_mb_avg": 419.2,
+    "mem_mb_max": 437.3,
+    "samples": 25
+   },
+   "ml-ops-mini-project-worker-2": {
+    "cpu_pct_avg": 8.1,
+    "cpu_pct_max": 62.5,
+    "mem_mb_avg": 413.4,
+    "mem_mb_max": 428.5,
+    "samples": 25
+   }
+  },
+  "stub": null,
+  "finished": "2026-11-08T16:06:48+00:00"
+ },
+ {
+  "config": {
+   "name": "w3_12u",
+   "workers": 3,
+   "users": 12,
+   "duration": 45
+  },
+  "started": "2026-11-08T16:06:48+00:00",
+  "locust": {
+   "submit": {
+    "requests": 27,
+    "failures": 0,
+    "p50_ms": 71.0,
+    "p95_ms": 590.0,
+    "p99_ms": 590.0,
+    "avg_ms": 243.89733325915586,
+    "rps": 0.6114573647495115
+   },
+   "poll": {
+    "requests": 1006,
+    "failures": 0,
+    "p50_ms": 12.0,
+    "p95_ms": 38.0,
+    "p99_ms": 70.0,
+    "avg_ms": 16.048662751497286,
+    "rps": 22.7824484791855
+   },
+   "e2e": {
+    "requests": 15,
+    "failures": 0,
+    "p50_ms": 21000.0,
+    "p95_ms": 36000.0,
+    "p99_ms": 36000.0,
+    "avg_ms": 20371.557966868084,
+    "rps": 0.3396985359719508
+   }
+  },
+  "wall_seconds": 47.4,
+  "locust_exit": 0,
+  "throughput_runs_per_s": 0.333,
+  "queue_wait": {
+   "count": 18.0,
+   "mean_s": 20.343,
+   "p50_upper_bound_s": 30.0,
+   "p95_upper_bound_s": 60.0
+  },
+  "run_time": {
+   "count": 18.0,
+   "mean_s": 2.088
+  },
+  "worker_utilisation": 0.239,
+  "counters": {
+   "cache_hits_total{cache=\"retrieval\"}": 36.0,
+   "escalations_total{reason=\"committee_discretion\"}": 15.0,
+   "llm_calls_total{outcome=\"ok\",provider=\"primary\"}": 90.0,
+   "runs_total{status=\"escalated\"}": 18.0
+  },
+  "resources": {
+   "ml-ops-mini-project-api-1": {
+    "cpu_pct_avg": 24.8,
+    "cpu_pct_max": 51.4,
+    "mem_mb_avg": 64.1,
+    "mem_mb_max": 73.8,
+    "samples": 25
+   },
+   "ml-ops-mini-project-chroma-1": {
+    "cpu_pct_avg": 1.5,
+    "cpu_pct_max": 11.5,
+    "mem_mb_avg": 26.0,
+    "mem_mb_max": 26.5,
+    "samples": 25
+   },
+   "ml-ops-mini-project-llm-stub-1": {
+    "cpu_pct_avg": 4.8,
+    "cpu_pct_max": 27.3,
+    "mem_mb_avg": 34.7,
+    "mem_mb_max": 43.4,
+    "samples": 25
+   },
+   "ml-ops-mini-project-locust-run-10524e8ba672": {
+    "cpu_pct_avg": 5.4,
+    "cpu_pct_max": 35.3,
+    "mem_mb_avg": 41.4,
+    "mem_mb_max": 41.8,
+    "samples": 22
+   },
+   "ml-ops-mini-project-redis-1": {
+    "cpu_pct_avg": 3.3,
+    "cpu_pct_max": 9.3,
+    "mem_mb_avg": 7.3,
+    "mem_mb_max": 7.6,
+    "samples": 25
+   },
+   "ml-ops-mini-project-ui-1": {
+    "cpu_pct_avg": 5.9,
+    "cpu_pct_max": 30.8,
+    "mem_mb_avg": 134.2,
+    "mem_mb_max": 134.3,
+    "samples": 25
+   },
+   "ml-ops-mini-project-web-1": {
+    "cpu_pct_avg": 0.3,
+    "cpu_pct_max": 3.3,
+    "mem_mb_avg": 10.0,
+    "mem_mb_max": 10.1,
+    "samples": 25
+   },
+   "ml-ops-mini-project-worker-1": {
+    "cpu_pct_avg": 11.4,
+    "cpu_pct_max": 103.0,
+    "mem_mb_avg": 421.8,
+    "mem_mb_max": 445.6,
+    "samples": 25
+   },
+   "ml-ops-mini-project-worker-2": {
+    "cpu_pct_avg": 11.3,
+    "cpu_pct_max": 97.3,
+    "mem_mb_avg": 426.1,
+    "mem_mb_max": 445.3,
+    "samples": 25
+   },
+   "ml-ops-mini-project-worker-3": {
+    "cpu_pct_avg": 11.1,
+    "cpu_pct_max": 89.6,
+    "mem_mb_avg": 415.1,
+    "mem_mb_max": 433.3,
+    "samples": 25
+   }
+  },
+  "stub": null,
+  "finished": "2026-11-08T16:09:05+00:00"
+ },
+ {
+  "config": {
+   "name": "c1_1w_1u",
+   "workers": 1,
+   "users": 1,
+   "duration": 45
+  },
+  "started": "2026-11-08T16:09:05+00:00",
+  "locust": {
+   "submit": {
+    "requests": 9,
+    "failures": 0,
+    "p50_ms": 43.0,
+    "p95_ms": 63.0,
+    "p99_ms": 63.0,
+    "avg_ms": 44.16771055528241,
+    "rps": 0.20369754450711045
+   },
+   "poll": {
+    "requests": 85,
+    "failures": 0,
+    "p50_ms": 13.0,
+    "p95_ms": 21.0,
+    "p99_ms": 27.0,
+    "avg_ms": 14.178082400073489,
+    "rps": 1.923810142567154
+   },
+   "e2e": {
+    "requests": 8,
+    "failures": 0,
+    "p50_ms": 6200.0,
+    "p95_ms": 6200.0,
+    "p99_ms": 6200.0,
+    "avg_ms": 5517.218053340912,
+    "rps": 0.1810644840063204
+   }
+  },
+  "wall_seconds": 47.1,
+  "locust_exit": 0,
+  "throughput_runs_per_s": 0.178,
+  "queue_wait": {
+   "count": 9.0,
+   "mean_s": 3.326,
+   "p50_upper_bound_s": 5.0,
+   "p95_upper_bound_s": 5.0
+  },
+  "run_time": {
+   "count": 9.0,
+   "mean_s": 2.002
+  },
+  "worker_utilisation": 0.346,
+  "counters": {
+   "cache_hits_total{cache=\"retrieval\"}": 18.0,
+   "escalations_total{reason=\"committee_discretion\"}": 9.0,
+   "llm_calls_total{outcome=\"ok\",provider=\"primary\"}": 45.0,
+   "runs_total{status=\"escalated\"}": 9.0
+  },
+  "resources": {
+   "ml-ops-mini-project-api-1": {
+    "cpu_pct_avg": 8.5,
+    "cpu_pct_max": 31.2,
+    "mem_mb_avg": 59.8,
+    "mem_mb_max": 72.2,
+    "samples": 25
+   },
+   "ml-ops-mini-project-chroma-1": {
+    "cpu_pct_avg": 0.8,
+    "cpu_pct_max": 3.5,
+    "mem_mb_avg": 26.4,
+    "mem_mb_max": 26.7,
+    "samples": 25
+   },
+   "ml-ops-mini-project-llm-stub-1": {
+    "cpu_pct_avg": 5.0,
+    "cpu_pct_max": 27.1,
+    "mem_mb_avg": 34.6,
+    "mem_mb_max": 37.7,
+    "samples": 25
+   },
+   "ml-ops-mini-project-locust-run-e5984131d6d8": {
+    "cpu_pct_avg": 0.4,
+    "cpu_pct_max": 0.6,
+    "mem_mb_avg": 38.1,
+    "mem_mb_max": 38.2,
+    "samples": 22
+   },
+   "ml-ops-mini-project-redis-1": {
+    "cpu_pct_avg": 1.5,
+    "cpu_pct_max": 3.8,
+    "mem_mb_avg": 5.5,
+    "mem_mb_max": 5.7,
+    "samples": 25
+   },
+   "ml-ops-mini-project-ui-1": {
+    "cpu_pct_avg": 2.2,
+    "cpu_pct_max": 22.9,
+    "mem_mb_avg": 134.2,
+    "mem_mb_max": 134.2,
+    "samples": 25
+   },
+   "ml-ops-mini-project-web-1": {
+    "cpu_pct_avg": 0.2,
+    "cpu_pct_max": 2.8,
+    "mem_mb_avg": 10.1,
+    "mem_mb_max": 10.8,
+    "samples": 25
+   },
+   "ml-ops-mini-project-worker-1": {
+    "cpu_pct_avg": 7.2,
+    "cpu_pct_max": 61.9,
+    "mem_mb_avg": 438.9,
+    "mem_mb_max": 452.9,
+    "samples": 25
+   }
+  },
+  "stub": null,
+  "finished": "2026-11-08T16:11:44+00:00"
+ },
+ {
+  "config": {
+   "name": "c1_1w_2u",
+   "workers": 1,
+   "users": 2,
+   "duration": 45
+  },
+  "started": "2026-11-08T16:11:44+00:00",
+  "locust": {
+   "submit": {
+    "requests": 7,
+    "failures": 0,
+    "p50_ms": 44.0,
+    "p95_ms": 84.0,
+    "p99_ms": 84.0,
+    "avg_ms": 50.3028417146457,
+    "rps": 0.15912670862574704
+   },
+   "poll": {
+    "requests": 170,
+    "failures": 0,
+    "p50_ms": 13.0,
+    "p95_ms": 23.0,
+    "p99_ms": 43.0,
+    "avg_ms": 14.278369788178892,
+    "rps": 3.8645057809109993
+   },
+   "e2e": {
+    "requests": 5,
+    "failures": 0,
+    "p50_ms": 18000.0,
+    "p95_ms": 19000.0,
+    "p99_ms": 19000.0,
+    "avg_ms": 13761.365985870361,
+    "rps": 0.11366193473267645
+   }
+  },
+  "wall_seconds": 47.0,
+  "locust_exit": 0,
+  "throughput_runs_per_s": 0.111,
+  "queue_wait": {
+   "count": 6.0,
+   "mean_s": 12.218,
+   "p50_upper_bound_s": 30.0,
+   "p95_upper_bound_s": 30.0
+  },
+  "run_time": {
+   "count": 6.0,
+   "mean_s": 1.978
+  },
+  "worker_utilisation": 0.228,
+  "counters": {
+   "cache_hits_total{cache=\"retrieval\"}": 12.0,
+   "escalations_total{reason=\"committee_discretion\"}": 5.0,
+   "llm_calls_total{outcome=\"ok\",provider=\"primary\"}": 30.0,
+   "runs_total{status=\"escalated\"}": 6.0
+  },
+  "resources": {
+   "ml-ops-mini-project-api-1": {
+    "cpu_pct_avg": 7.8,
+    "cpu_pct_max": 30.1,
+    "mem_mb_avg": 59.0,
+    "mem_mb_max": 66.2,
+    "samples": 25
+   },
+   "ml-ops-mini-project-chroma-1": {
+    "cpu_pct_avg": 0.8,
+    "cpu_pct_max": 3.6,
+    "mem_mb_avg": 24.3,
+    "mem_mb_max": 24.6,
+    "samples": 25
+   },
+   "ml-ops-mini-project-llm-stub-1": {
+    "cpu_pct_avg": 3.9,
+    "cpu_pct_max": 23.9,
+    "mem_mb_avg": 34.1,
+    "mem_mb_max": 43.2,
+    "samples": 25
+   },
+   "ml-ops-mini-project-locust-run-d04e715c7b15": {
+    "cpu_pct_avg": 0.7,
+    "cpu_pct_max": 0.9,
+    "mem_mb_avg": 39.0,
+    "mem_mb_max": 39.1,
+    "samples": 22
+   },
+   "ml-ops-mini-project-redis-1": {
+    "cpu_pct_avg": 1.6,
+    "cpu_pct_max": 4.0,
+    "mem_mb_avg": 4.9,
+    "mem_mb_max": 6.5,
+    "samples": 25
+   },
+   "ml-ops-mini-project-ui-1": {
+    "cpu_pct_avg": 4.5,
+    "cpu_pct_max": 23.7,
+    "mem_mb_avg": 134.2,
+    "mem_mb_max": 134.2,
+    "samples": 25
+   },
+   "ml-ops-mini-project-web-1": {
+    "cpu_pct_avg": 0.1,
+    "cpu_pct_max": 2.9,
+    "mem_mb_avg": 10.0,
+    "mem_mb_max": 10.3,
+    "samples": 25
+   },
+   "ml-ops-mini-project-worker-1": {
+    "cpu_pct_avg": 5.7,
+    "cpu_pct_max": 56.3,
+    "mem_mb_avg": 418.0,
+    "mem_mb_max": 418.1,
+    "samples": 25
+   }
+  },
+  "stub": null,
+  "finished": "2026-11-08T16:13:29+00:00"
+ },
+ {
+  "config": {
+   "name": "c1_1w_4u",
+   "workers": 1,
+   "users": 4,
+   "duration": 45
+  },
+  "started": "2026-11-08T16:13:29+00:00",
+  "locust": {
+   "submit": {
+    "requests": 11,
+    "failures": 0,
+    "p50_ms": 42.0,
+    "p95_ms": 140.0,
+    "p99_ms": 140.0,
+    "avg_ms": 70.96022845441688,
+    "rps": 0.24981055213302736
+   },
+   "poll": {
+    "requests": 340,
+    "failures": 0,
+    "p50_ms": 12.0,
+    "p95_ms": 26.0,
+    "p99_ms": 44.0,
+    "avg_ms": 13.79179987056084,
+    "rps": 7.721417065929937
+   },
+   "e2e": {
+    "requests": 7,
+    "failures": 0,
+    "p50_ms": 21000.0,
+    "p95_ms": 25000.0,
+    "p99_ms": 25000.0,
+    "avg_ms": 17080.84303992135,
+    "rps": 0.15897035135738105
+   }
+  },
+  "wall_seconds": 47.2,
+  "locust_exit": 0,
+  "throughput_runs_per_s": 0.156,
+  "queue_wait": {
+   "count": 9.0,
+   "mean_s": 16.317,
+   "p50_upper_bound_s": 30.0,
+   "p95_upper_bound_s": 30.0
+  },
+  "run_time": {
+   "count": 9.0,
+   "mean_s": 2.074
+  },
+  "worker_utilisation": 0.358,
+  "counters": {
+   "cache_hits_total{cache=\"retrieval\"}": 18.0,
+   "escalations_total{reason=\"committee_discretion\"}": 9.0,
+   "llm_calls_total{outcome=\"ok\",provider=\"primary\"}": 45.0,
+   "runs_total{status=\"escalated\"}": 9.0
+  },
+  "resources": {
+   "ml-ops-mini-project-api-1": {
+    "cpu_pct_avg": 11.5,
+    "cpu_pct_max": 37.6,
+    "mem_mb_avg": 59.3,
+    "mem_mb_max": 60.4,
+    "samples": 26
+   },
+   "ml-ops-mini-project-chroma-1": {
+    "cpu_pct_avg": 0.7,
+    "cpu_pct_max": 4.1,
+    "mem_mb_avg": 24.3,
+    "mem_mb_max": 24.6,
+    "samples": 26
+   },
+   "ml-ops-mini-project-llm-stub-1": {
+    "cpu_pct_avg": 5.2,
+    "cpu_pct_max": 27.2,
+    "mem_mb_avg": 33.8,
+    "mem_mb_max": 33.9,
+    "samples": 26
+   },
+   "ml-ops-mini-project-locust-run-03ef22f700cb": {
+    "cpu_pct_avg": 1.4,
+    "cpu_pct_max": 1.6,
+    "mem_mb_avg": 39.3,
+    "mem_mb_max": 39.6,
+    "samples": 22
+   },
+   "ml-ops-mini-project-redis-1": {
+    "cpu_pct_avg": 1.8,
+    "cpu_pct_max": 4.8,
+    "mem_mb_avg": 4.8,
+    "mem_mb_max": 5.1,
+    "samples": 26
+   },
+   "ml-ops-mini-project-ui-1": {
+    "cpu_pct_avg": 2.6,
+    "cpu_pct_max": 24.5,
+    "mem_mb_avg": 135.0,
+    "mem_mb_max": 146.6,
+    "samples": 26
+   },
+   "ml-ops-mini-project-web-1": {
+    "cpu_pct_avg": 0.1,
+    "cpu_pct_max": 2.8,
+    "mem_mb_avg": 10.0,
+    "mem_mb_max": 10.0,
+    "samples": 26
+   },
+   "ml-ops-mini-project-worker-1": {
+    "cpu_pct_avg": 7.9,
+    "cpu_pct_max": 64.6,
+    "mem_mb_avg": 419.1,
+    "mem_mb_max": 438.5,
+    "samples": 26
+   }
+  },
+  "stub": null,
+  "finished": "2026-11-08T16:15:17+00:00"
+ },
+ {
+  "config": {
+   "name": "c1_1w_8u",
+   "workers": 1,
+   "users": 8,
+   "duration": 45
+  },
+  "started": "2026-11-08T16:15:17+00:00",
+  "locust": {
+   "submit": {
+    "requests": 15,
+    "failures": 0,
+    "p50_ms": 140.0,
+    "p95_ms": 390.0,
+    "p99_ms": 390.0,
+    "avg_ms": 189.88615620013056,
+    "rps": 0.3398401698060028
+   },
+   "poll": {
+    "requests": 677,
+    "failures": 0,
+    "p50_ms": 12.0,
+    "p95_ms": 24.0,
+    "p99_ms": 53.0,
+    "avg_ms": 14.093911621856284,
+    "rps": 15.338119663910927
+   },
+   "e2e": {
+    "requests": 7,
+    "failures": 0,
+    "p50_ms": 21000.0,
+    "p95_ms": 40000.0,
+    "p99_ms": 40000.0,
+    "avg_ms": 20994.87212726048,
+    "rps": 0.1585920792428013
+   }
+  },
+  "wall_seconds": 47.3,
+  "locust_exit": 0,
+  "throughput_runs_per_s": 0.156,
+  "queue_wait": {
+   "count": 9.0,
+   "mean_s": 24.248,
+   "p50_upper_bound_s": 30.0,
+   "p95_upper_bound_s": 60.0
+  },
+  "run_time": {
+   "count": 9.0,
+   "mean_s": 2.098
+  },
+  "worker_utilisation": 0.361,
+  "counters": {
+   "cache_hits_total{cache=\"retrieval\"}": 18.0,
+   "escalations_total{reason=\"committee_discretion\"}": 8.0,
+   "llm_calls_total{outcome=\"ok\",provider=\"primary\"}": 45.0,
+   "runs_total{status=\"escalated\"}": 9.0
+  },
+  "resources": {
+   "ml-ops-mini-project-api-1": {
+    "cpu_pct_avg": 18.9,
+    "cpu_pct_max": 51.0,
+    "mem_mb_avg": 60.6,
+    "mem_mb_max": 73.0,
+    "samples": 25
+   },
+   "ml-ops-mini-project-chroma-1": {
+    "cpu_pct_avg": 0.9,
+    "cpu_pct_max": 4.3,
+    "mem_mb_avg": 24.0,
+    "mem_mb_max": 24.3,
+    "samples": 25
+   },
+   "ml-ops-mini-project-llm-stub-1": {
+    "cpu_pct_avg": 7.2,
+    "cpu_pct_max": 35.7,
+    "mem_mb_avg": 33.8,
+    "mem_mb_max": 34.1,
+    "samples": 25
+   },
+   "ml-ops-mini-project-locust-run-424435acab14": {
+    "cpu_pct_avg": 3.1,
+    "cpu_pct_max": 11.6,
+    "mem_mb_avg": 40.0,
+    "mem_mb_max": 40.2,
+    "samples": 22
+   },
+   "ml-ops-mini-project-redis-1": {
+    "cpu_pct_avg": 2.5,
+    "cpu_pct_max": 5.9,
+    "mem_mb_avg": 4.7,
+    "mem_mb_max": 5.2,
+    "samples": 25
+   },
+   "ml-ops-mini-project-ui-1": {
+    "cpu_pct_avg": 2.3,
+    "cpu_pct_max": 30.9,
+    "mem_mb_avg": 134.2,
+    "mem_mb_max": 134.2,
+    "samples": 25
+   },
+   "ml-ops-mini-project-web-1": {
+    "cpu_pct_avg": 0.0,
+    "cpu_pct_max": 0.0,
+    "mem_mb_avg": 10.0,
+    "mem_mb_max": 10.0,
+    "samples": 25
+   },
+   "ml-ops-mini-project-worker-1": {
+    "cpu_pct_avg": 7.5,
+    "cpu_pct_max": 64.2,
+    "mem_mb_avg": 419.1,
+    "mem_mb_max": 442.6,
+    "samples": 25
+   }
+  },
+  "stub": null,
+  "finished": "2026-11-08T16:17:12+00:00"
+ }
+]

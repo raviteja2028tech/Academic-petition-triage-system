@@ -1,0 +1,569 @@
+{
+ "uid": "triage-overview",
+ "title": "Petition Triage - overview",
+ "schemaVersion": 39,
+ "version": 1,
+ "refresh": "10s",
+ "time": {
+  "from": "now-30m",
+  "to": "now"
+ },
+ "tags": [
+  "triage"
+ ],
+ "panels": [
+  {
+   "id": 1,
+   "type": "timeseries",
+   "title": "Runs finished per minute by status",
+   "description": "",
+   "datasource": {
+    "type": "prometheus",
+    "uid": "prom"
+   },
+   "gridPos": {
+    "x": 0,
+    "y": 0,
+    "w": 8,
+    "h": 7
+   },
+   "fieldConfig": {
+    "defaults": {
+     "unit": "short"
+    },
+    "overrides": []
+   },
+   "targets": [
+    {
+     "expr": "sum by (status) (rate(runs_total[1m])) * 60",
+     "legendFormat": "{{status}}",
+     "refId": "A"
+    }
+   ]
+  },
+  {
+   "id": 2,
+   "type": "timeseries",
+   "title": "End-to-end run latency p50 / p95 (s)",
+   "description": "",
+   "datasource": {
+    "type": "prometheus",
+    "uid": "prom"
+   },
+   "gridPos": {
+    "x": 8,
+    "y": 0,
+    "w": 8,
+    "h": 7
+   },
+   "fieldConfig": {
+    "defaults": {
+     "unit": "s"
+    },
+    "overrides": []
+   },
+   "targets": [
+    {
+     "expr": "histogram_quantile(0.5, sum by (le) (rate(run_seconds_bucket[2m])))",
+     "legendFormat": "p50",
+     "refId": "A"
+    },
+    {
+     "expr": "histogram_quantile(0.95, sum by (le) (rate(run_seconds_bucket[2m])))",
+     "legendFormat": "p95",
+     "refId": "B"
+    }
+   ]
+  },
+  {
+   "id": 3,
+   "type": "timeseries",
+   "title": "Run error rate (failed / all)",
+   "description": "",
+   "datasource": {
+    "type": "prometheus",
+    "uid": "prom"
+   },
+   "gridPos": {
+    "x": 16,
+    "y": 0,
+    "w": 8,
+    "h": 7
+   },
+   "fieldConfig": {
+    "defaults": {
+     "unit": "percentunit"
+    },
+    "overrides": []
+   },
+   "targets": [
+    {
+     "expr": "sum(rate(runs_total{status=\"failed\"}[2m])) / clamp_min(sum(rate(runs_total[2m])), 1e-9)",
+     "legendFormat": "failed share",
+     "refId": "A"
+    }
+   ]
+  },
+  {
+   "id": 4,
+   "type": "timeseries",
+   "title": "Escalations by reason (per min)",
+   "description": "",
+   "datasource": {
+    "type": "prometheus",
+    "uid": "prom"
+   },
+   "gridPos": {
+    "x": 0,
+    "y": 7,
+    "w": 8,
+    "h": 7
+   },
+   "fieldConfig": {
+    "defaults": {
+     "unit": "short"
+    },
+    "overrides": []
+   },
+   "targets": [
+    {
+     "expr": "sum by (reason) (rate(escalations_total[2m])) * 60",
+     "legendFormat": "{{reason}}",
+     "refId": "A"
+    }
+   ]
+  },
+  {
+   "id": 5,
+   "type": "timeseries",
+   "title": "Queue wait p95 (s)",
+   "description": "",
+   "datasource": {
+    "type": "prometheus",
+    "uid": "prom"
+   },
+   "gridPos": {
+    "x": 8,
+    "y": 7,
+    "w": 8,
+    "h": 7
+   },
+   "fieldConfig": {
+    "defaults": {
+     "unit": "s"
+    },
+    "overrides": []
+   },
+   "targets": [
+    {
+     "expr": "histogram_quantile(0.95, sum by (le) (rate(queue_wait_seconds_bucket[2m])))",
+     "legendFormat": "p95",
+     "refId": "A"
+    }
+   ]
+  },
+  {
+   "id": 6,
+   "type": "timeseries",
+   "title": "Queue depth / active workers",
+   "description": "",
+   "datasource": {
+    "type": "prometheus",
+    "uid": "prom"
+   },
+   "gridPos": {
+    "x": 16,
+    "y": 7,
+    "w": 8,
+    "h": 7
+   },
+   "fieldConfig": {
+    "defaults": {
+     "unit": "short"
+    },
+    "overrides": []
+   },
+   "targets": [
+    {
+     "expr": "queue_depth",
+     "legendFormat": "queue depth",
+     "refId": "A"
+    },
+    {
+     "expr": "workers_active",
+     "legendFormat": "workers",
+     "refId": "B"
+    }
+   ]
+  },
+  {
+   "id": 7,
+   "type": "timeseries",
+   "title": "Agent executions by outcome (per min)",
+   "description": "",
+   "datasource": {
+    "type": "prometheus",
+    "uid": "prom"
+   },
+   "gridPos": {
+    "x": 0,
+    "y": 14,
+    "w": 8,
+    "h": 7
+   },
+   "fieldConfig": {
+    "defaults": {
+     "unit": "short"
+    },
+    "overrides": []
+   },
+   "targets": [
+    {
+     "expr": "sum by (agent, outcome) (rate(agent_runs_total[2m])) * 60",
+     "legendFormat": "{{agent}} {{outcome}}",
+     "refId": "A"
+    }
+   ]
+  },
+  {
+   "id": 8,
+   "type": "timeseries",
+   "title": "Agent latency p95 (s)",
+   "description": "",
+   "datasource": {
+    "type": "prometheus",
+    "uid": "prom"
+   },
+   "gridPos": {
+    "x": 8,
+    "y": 14,
+    "w": 8,
+    "h": 7
+   },
+   "fieldConfig": {
+    "defaults": {
+     "unit": "s"
+    },
+    "overrides": []
+   },
+   "targets": [
+    {
+     "expr": "histogram_quantile(0.95, sum by (le, agent) (rate(agent_seconds_bucket[2m])))",
+     "legendFormat": "{{agent}}",
+     "refId": "A"
+    }
+   ]
+  },
+  {
+   "id": 9,
+   "type": "timeseries",
+   "title": "Tool calls (per min) and p95 latency",
+   "description": "",
+   "datasource": {
+    "type": "prometheus",
+    "uid": "prom"
+   },
+   "gridPos": {
+    "x": 16,
+    "y": 14,
+    "w": 8,
+    "h": 7
+   },
+   "fieldConfig": {
+    "defaults": {
+     "unit": "short"
+    },
+    "overrides": []
+   },
+   "targets": [
+    {
+     "expr": "sum by (tool, ok) (rate(tool_calls_total[2m])) * 60",
+     "legendFormat": "{{tool}} ok={{ok}}",
+     "refId": "A"
+    },
+    {
+     "expr": "histogram_quantile(0.95, sum by (le) (rate(tool_seconds_bucket[2m])))",
+     "legendFormat": "p95 s",
+     "refId": "B"
+    }
+   ]
+  },
+  {
+   "id": 10,
+   "type": "timeseries",
+   "title": "LLM calls by provider/outcome (per min)",
+   "description": "",
+   "datasource": {
+    "type": "prometheus",
+    "uid": "prom"
+   },
+   "gridPos": {
+    "x": 0,
+    "y": 21,
+    "w": 8,
+    "h": 7
+   },
+   "fieldConfig": {
+    "defaults": {
+     "unit": "short"
+    },
+    "overrides": []
+   },
+   "targets": [
+    {
+     "expr": "sum by (provider, outcome) (rate(llm_calls_total[2m])) * 60",
+     "legendFormat": "{{provider}} {{outcome}}",
+     "refId": "A"
+    }
+   ]
+  },
+  {
+   "id": 11,
+   "type": "timeseries",
+   "title": "LLM retries, fallbacks, breaker rejections (per min)",
+   "description": "",
+   "datasource": {
+    "type": "prometheus",
+    "uid": "prom"
+   },
+   "gridPos": {
+    "x": 8,
+    "y": 21,
+    "w": 8,
+    "h": 7
+   },
+   "fieldConfig": {
+    "defaults": {
+     "unit": "short"
+    },
+    "overrides": []
+   },
+   "targets": [
+    {
+     "expr": "sum by (kind) (rate(llm_retries_total[2m])) * 60",
+     "legendFormat": "retry {{kind}}",
+     "refId": "A"
+    },
+    {
+     "expr": "sum(rate(llm_fallback_used_total[2m])) * 60",
+     "legendFormat": "fallback used",
+     "refId": "B"
+    },
+    {
+     "expr": "sum(rate(llm_breaker_rejected_total[2m])) * 60",
+     "legendFormat": "breaker rejected",
+     "refId": "C"
+    }
+   ]
+  },
+  {
+   "id": 12,
+   "type": "timeseries",
+   "title": "Circuit breaker state (0 closed, 1 half-open, 2 open)",
+   "description": "",
+   "datasource": {
+    "type": "prometheus",
+    "uid": "prom"
+   },
+   "gridPos": {
+    "x": 16,
+    "y": 21,
+    "w": 8,
+    "h": 7
+   },
+   "fieldConfig": {
+    "defaults": {
+     "unit": "short"
+    },
+    "overrides": []
+   },
+   "targets": [
+    {
+     "expr": "llm_breaker_state",
+     "legendFormat": "{{provider}}",
+     "refId": "A"
+    }
+   ]
+  },
+  {
+   "id": 13,
+   "type": "timeseries",
+   "title": "Cache hit ratio",
+   "description": "",
+   "datasource": {
+    "type": "prometheus",
+    "uid": "prom"
+   },
+   "gridPos": {
+    "x": 0,
+    "y": 28,
+    "w": 8,
+    "h": 7
+   },
+   "fieldConfig": {
+    "defaults": {
+     "unit": "percentunit"
+    },
+    "overrides": []
+   },
+   "targets": [
+    {
+     "expr": "sum by (cache) (rate(cache_hits_total[5m])) / clamp_min(sum by (cache) (rate(cache_hits_total[5m])) + sum by (cache) (rate(cache_misses_total[5m])), 1e-9)",
+     "legendFormat": "{{cache}}",
+     "refId": "A"
+    }
+   ]
+  },
+  {
+   "id": 14,
+   "type": "timeseries",
+   "title": "HTTP requests per second by status",
+   "description": "",
+   "datasource": {
+    "type": "prometheus",
+    "uid": "prom"
+   },
+   "gridPos": {
+    "x": 8,
+    "y": 28,
+    "w": 8,
+    "h": 7
+   },
+   "fieldConfig": {
+    "defaults": {
+     "unit": "short"
+    },
+    "overrides": []
+   },
+   "targets": [
+    {
+     "expr": "sum by (status) (rate(http_requests_total[1m]))",
+     "legendFormat": "{{status}}",
+     "refId": "A"
+    }
+   ]
+  },
+  {
+   "id": 15,
+   "type": "timeseries",
+   "title": "HTTP latency p95 by route (s)",
+   "description": "",
+   "datasource": {
+    "type": "prometheus",
+    "uid": "prom"
+   },
+   "gridPos": {
+    "x": 16,
+    "y": 28,
+    "w": 8,
+    "h": 7
+   },
+   "fieldConfig": {
+    "defaults": {
+     "unit": "s"
+    },
+    "overrides": []
+   },
+   "targets": [
+    {
+     "expr": "histogram_quantile(0.95, sum by (le, route) (rate(http_request_seconds_bucket[2m])))",
+     "legendFormat": "{{route}}",
+     "refId": "A"
+    }
+   ]
+  },
+  {
+   "id": 16,
+   "type": "timeseries",
+   "title": "Rate-limited requests (per min)",
+   "description": "",
+   "datasource": {
+    "type": "prometheus",
+    "uid": "prom"
+   },
+   "gridPos": {
+    "x": 0,
+    "y": 35,
+    "w": 8,
+    "h": 7
+   },
+   "fieldConfig": {
+    "defaults": {
+     "unit": "short"
+    },
+    "overrides": []
+   },
+   "targets": [
+    {
+     "expr": "sum(rate(rate_limited_total[2m])) * 60",
+     "legendFormat": "429s",
+     "refId": "A"
+    }
+   ]
+  },
+  {
+   "id": 17,
+   "type": "timeseries",
+   "title": "Container CPU (cores)",
+   "description": "",
+   "datasource": {
+    "type": "prometheus",
+    "uid": "prom"
+   },
+   "gridPos": {
+    "x": 8,
+    "y": 35,
+    "w": 8,
+    "h": 7
+   },
+   "fieldConfig": {
+    "defaults": {
+     "unit": "short"
+    },
+    "overrides": []
+   },
+   "targets": [
+    {
+     "expr": "sum by (name) (rate(container_cpu_usage_seconds_total{name=~\".+\"}[1m]))",
+     "legendFormat": "{{name}}",
+     "refId": "A"
+    }
+   ]
+  },
+  {
+   "id": 18,
+   "type": "timeseries",
+   "title": "Container memory (bytes)",
+   "description": "",
+   "datasource": {
+    "type": "prometheus",
+    "uid": "prom"
+   },
+   "gridPos": {
+    "x": 16,
+    "y": 35,
+    "w": 8,
+    "h": 7
+   },
+   "fieldConfig": {
+    "defaults": {
+     "unit": "bytes"
+    },
+    "overrides": []
+   },
+   "targets": [
+    {
+     "expr": "sum by (name) (container_memory_working_set_bytes{name=~\".+\"})",
+     "legendFormat": "{{name}}",
+     "refId": "A"
+    }
+   ]
+  }
+ ],
+ "templating": {
+  "list": []
+ },
+ "annotations": {
+  "list": []
+ }
+}
