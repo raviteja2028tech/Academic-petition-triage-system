@@ -692,9 +692,6 @@ The project explores the application of multi-agent AI, retrieval-augmented gene
 
 ---
 
-## 👨‍💻 Author
-
-**Raviteja**
 
 Computer Science & Engineering — Artificial Intelligence & Machine Learning  
 PES University, Bengaluru
